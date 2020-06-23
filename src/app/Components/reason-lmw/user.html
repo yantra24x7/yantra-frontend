@@ -1,0 +1,30 @@
+<!-- <div class="modal_sec">
+    <mat-toolbar class="forum">
+       
+         <button type="button" class="close" aria-label="Close" mat-dialog-close>
+            <span aria-hidden="true">×</span>
+        </button> 
+    </mat-toolbar>
+    <div class="dialog-form">
+        <div class="filter_sec">
+   
+        </div>
+        <div mat-dialog-actions>
+            <button mat-raised-button class="filter_btn btn_orange" [disabled]="reasonform.invalid"> Save</button>
+            <button mat-raised-button mat-dialog-close class="filter_btn btn_default ml-16">Close</button>
+          </div>
+    </div>
+</div> -->
+<h2 mat-dialog-title>New Reason Registaration</h2>
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="reasonform" (ngSubmit)="submit(reasonform)" class="form_sec">
+        <mat-form-field>
+            <mat-label>Reason</mat-label>
+            <input matInput formControlName="reason" type="text" placeholder="Enter your reason">
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button color="primary" mat-raised-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions>

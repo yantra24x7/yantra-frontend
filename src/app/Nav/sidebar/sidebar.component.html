@@ -1,0 +1,341 @@
+<mat-toolbar class="header" *ngIf="nav.visible">
+  <div class="container-fluid">
+    <div class="header_area">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <div class="company_name">
+        DEMO
+<!--            <img src="../../../assets/images/logo_lmw.png">
+
+ -->        <!-- <h3>LMW</h3> -->
+      </div>
+      <a class="logout" (click)="close()">
+        <i class="material-icons">
+          power_settings_new
+          </i>
+      </a>
+      <!-- <p class="edit"><i class="fa fa-edit"></i></p> -->
+      <!-- <button class="logout" mat-raised-button (click)="close()">Logout</button> -->
+    </div>
+  </div>
+  <!-- <mat-icon (click)="openDialog()">edit</mat-icon> -->
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #drawer class="sidenav scroller" mode="side" opened *ngIf="nav.visible">
+    <!-- <div class="main-menu"> -->
+    <mat-nav-list>
+
+      <!-- <ul id="side-main-menu" class="side-menu"> -->
+      <!-- <li routerLinkActive="active-link"> -->
+      <!-- <a [routerLink]="['/dashboard']">
+            <mat-icon></mat-icon>
+            <span>Dashboard</span>
+          </a> -->
+      <button mat-icon-button matTooltip="Dashboard" routerLinkActive="active-link" matTooltipPosition="right"
+        [routerLink]="['/dashboard']">
+        <i class="material-icons">
+          apps
+        </i>
+      </button>
+      <!-- </li> -->
+
+      <!-- <li routerLinkActive="active-link">
+          <a [routerLink]="['/alarm']">
+            <mat-icon>alarm</mat-icon>
+            <span>Alarms</span>
+          </a>
+        </li> -->
+      <button mat-icon-button matTooltip="Alarm" routerLinkActive="active-link" matTooltipPosition="right"
+        [routerLink]="['/alarm']">
+        <i class="material-icons">
+          notifications
+        </i>
+      </button>
+
+      <button mat-icon-button matTooltip="OEE TV" routerLinkActive="active-link" matTooltipPosition="right"
+        [routerLink]="['/chart']">
+        <i class="material-icons">
+       <mat-icon>tv</mat-icon>
+        </i>
+      </button>
+
+      <button mat-icon-button matTooltip="Report" routerLinkActive="active-link" matTooltipPosition="right"
+        [routerLink]="['/report']">
+        <i class="material-icons">
+          assignment
+        </i>
+      </button>
+      <button mat-icon-button matTooltip="Trend Chart" routerLinkActive="active-link" matTooltipPosition="right"
+        [routerLink]="['/trendchart']">
+        <i class="material-icons">
+          data_usage
+        </i>
+      </button>
+      <button mat-icon-button matTooltip="Compare Chart" routerLinkActive="active-link" matTooltipPosition="right"
+        [routerLink]="['/comparechart']">
+        <i class="material-icons">
+          compare
+        </i>
+      </button>
+      <button mat-icon-button matTooltip="Overall Chart" routerLinkActive="active-link" matTooltipPosition="right"
+        [routerLink]="['/overallchart']">
+        <i class="material-icons">
+          equalizer
+        </i>
+      </button>
+    
+
+
+      <!-- <li routerLinkActive="active-link">
+          <a [routerLink]="['/alert']">
+            <mat-icon>add_alert</mat-icon>
+            <span>Alert</span>
+          </a>
+        </li>
+
+        
+        <li routerLinkActive="active-link">
+          <a [routerLink]="['/connectionlog']">
+            <mat-icon>flip_to_back</mat-icon>
+            <span>Log</span>
+          </a>
+        </li>
+        <li routerLinkActive="active-link">
+          <a [routerLink]="['/hmi']">
+            <mat-icon>launch</mat-icon>
+            <span>HMI</span>
+          </a>
+        </li>
+  <li routerLinkActive="active-link">
+          <a [routerLink]="['/report']">
+            <mat-icon>receipt</mat-icon>
+            <span>Report</span>
+          </a>
+        </li> 
+              <li routerLinkActive="active-link">
+          <a [routerLink]="['/cyclechart']">
+            <mat-icon>kitchen</mat-icon>
+            <span>Cycle Time Chart</span>
+          </a>
+        </li>
+
+        <li routerLinkActive="active-link">
+          <a [routerLink]="['/allshiftchart']">
+            <mat-icon>spa</mat-icon>
+            <span>All shift chart</span>
+          </a>
+        </li>
+
+        <li routerLinkActive="active-link">
+          <a [routerLink]="['/cyclestart']">
+            <mat-icon>indeterminate_check_box</mat-icon>
+            <span>Cycle start to start</span>
+          </a>
+        </li>
+
+        <li routerLinkActive="active-link">
+          <a [routerLink]="['/cyclestop']">
+            <mat-icon>domain</mat-icon>
+            <span>Cycle Stop to start</span>
+          </a>
+        </li>
+
+        <li routerLinkActive="active-link">
+          <a [routerLink]="['/notification']">
+            <mat-icon>notification_important</mat-icon>
+            <span>Notification Setting</span>
+          </a>
+        </li> -->
+      <!-- <li routerLinkActive="active-link">
+          <a (click)="toggle()">
+            <mat-icon>receipt</mat-icon>
+            <span>Master</span>
+            <i class="material-icons">
+              keyboard_arrow_down
+            </i>
+          </a>
+        </li> -->
+      <!-- <button mat-icon-button matTooltip="Notifications" routerLinkActive="active-link" matTooltipPosition="right"  (click)="toggle()">
+          <i class="material-icons">
+            notifications
+          </i>
+          
+        </button> -->
+      <!-- *ngIf="show1"*ngIf="show1"ss -->
+      <div>
+        <!-- <li routerLinkActive="active-link">
+            <a [routerLink]="['/machine_registration']">
+              <mat-icon>casino</mat-icon>
+              <span>Machine</span>
+            </a>
+          </li> -->
+        <button mat-icon-button matTooltip="Machine" routerLinkActive="active-link" matTooltipPosition="right"
+          [routerLink]="['/machine_registration']">
+          <i class="material-icons">
+            markunread_mailbox
+          </i>
+        </button>
+        <!-- <li routerLinkActive="active-link">
+            <a [routerLink]="['/shift']">
+              <mat-icon> satellite</mat-icon>
+              <span>Shift</span>
+            </a>
+          </li> -->
+        <button mat-icon-button matTooltip="Shift" routerLinkActive="active-link" matTooltipPosition="right"
+          [routerLink]="['/shift']">
+          <i class="material-icons">
+            timelapse
+          </i>
+        </button>
+        <!-- <li routerLinkActive="active-link">
+            <a [routerLink]="['/oee']">
+              <mat-icon> store_mall_directory</mat-icon>
+              <span>OEE</span>
+            </a>
+          </li> -->
+        <!-- <li routerLinkActive="active-link">
+            <a [routerLink]="['/user_management']">
+              <mat-icon> streetview</mat-icon>
+              <span>User</span>
+            </a>
+          </li>
+          <li routerLinkActive="active-link">
+            <a [routerLink]="['/operator_registration']">
+              <mat-icon>view_compact</mat-icon>
+              <span>Operator</span>
+            </a>
+          </li> -->
+        <button mat-icon-button matTooltip="User" routerLinkActive="active-link" matTooltipPosition="right"
+          [routerLink]="['/user_management']">
+          <i class="material-icons">
+            person
+          </i>
+        </button> <button mat-icon-button matTooltip="Operator" routerLinkActive="active-link"
+          matTooltipPosition="right" [routerLink]="['/operator_registration']">
+          <i class="material-icons">
+            accessibility
+          </i>
+        </button>
+        <!-- <button mat-icon-button matTooltip="Machine LMW" routerLinkActive="active-link" matTooltipPosition="right"
+          [routerLink]="['/machine_lmw']">
+          <i class="material-icons">
+            person
+          </i>
+        </button> -->
+        <button mat-icon-button matTooltip="Reason" routerLinkActive="active-link" matTooltipPosition="right"
+        [routerLink]="['/reason_lmw']">
+        <i class="material-icons">
+          markunread_mailbox
+        </i>
+      </button>
+
+
+      <button mat-icon-button matTooltip="Production Report " routerLinkActive="active-link" matTooltipPosition="right"
+      [routerLink]="['/idle_reason']">
+      <i class="material-icons">
+        assignment
+
+
+      </i>
+    </button>
+
+    <button mat-icon-button matTooltip="Idle Reason Report" routerLinkActive="active-link" matTooltipPosition="right"
+          [routerLink]="['/report_idle']">
+          <i class="material-icons">
+            data_usage
+          </i>
+        </button>
+
+        <button mat-icon-button matTooltip="Oee" routerLinkActive="active-link" matTooltipPosition="right"
+          [routerLink]="['/oee']">
+          <i class="material-icons">
+            timelapse
+          </i>
+        </button>
+
+    <!-- <button mat-icon-button matTooltip="OEE" routerLinkActive="active-link" matTooltipPosition="right"
+          [routerLink]="['/oee']">
+          <i class="material-icons">
+            markunread_mailbox
+          </i>
+        </button> -->
+        <!-- <li routerLinkActive="active-link">
+            <a [routerLink]="['/operator_allocation']">
+              <mat-icon>healing</mat-icon>
+              <span>Operator Allocation</span>
+            </a>
+          </li> -->
+      </div>
+
+      <!-- <li routerLinkActive="active-link">
+          <a (click)="view()">
+            <mat-icon>file_copy</mat-icon>
+            <span>File Compare</span>
+            <i class="material-icons">
+              keyboard_arrow_down
+            </i>
+          </a>
+        </li>
+        <div *ngIf="show2">
+          <li routerLinkActive="active-link">
+            <a [routerLink]="['/filepath']">
+              <mat-icon>backup</mat-icon>
+              <span>File Path</span>
+            </a>
+          </li>
+          <li routerLinkActive="active-link">
+            <a [routerLink]="['/master']">
+              <mat-icon>bookmark</mat-icon>
+              <span>Program List</span>
+            </a>
+          </li>
+
+          <li routerLinkActive="active-link">
+            <a [routerLink]="['/backup']">
+              <mat-icon>backup</mat-icon>
+              <span>Backup Folder</span>
+            </a>
+          </li>
+
+          <li routerLinkActive="active-link">
+            <a [routerLink]="['/codecompare']">
+              <mat-icon>developer_mode</mat-icon>
+              <span> Code Compare</span>
+            </a>
+          </li>
+          <li routerLinkActive="active-link">
+            <a [routerLink]="['/reason']">
+              <mat-icon> table_chart</mat-icon>
+              <span>Reason</span>
+            </a>
+          </li>
+        </div> -->
+
+      <!-- </ul>
+    </div> -->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+<!-- <div class="footer_sec">
+  <p class="copy_rights">
+    Copyright @2020  <a href="javascript:;"> Lakshmi machine works limited </a> All Rights Reserved.
+  </p>
+</div> -->
+<!-- 
+<footer class="main-footer ng-scope" *ngIf="nav.visible">
+  <div class="container-fluid">
+    <p>Powered by
+      <a target="blank" href="https://www.altiussolution.com" class="external">
+        <img src="/assets/images/favicon.png">Yantra24x7
+      </a></p>
+  </div>
+</footer> -->
+<div ng-include="'footer.html'"></div>

@@ -1,0 +1,226 @@
+<section class="page">
+
+    <div class="container_fluid pt-3">
+        <div class="row flexor">
+            <div class="col-lg-6 col-md-12 mb-2">
+                <mat-card class="card_sec">
+                    <div class="filter_sec mt-1 mb-2">
+                        <form [formGroup]="login" (ngSubmit)="logintest('true')">
+                        <div class="filter_fields">
+                            <div class="filter_field">
+                                <mat-form-field appearance="outline">
+                                    <mat-select  matNativeControl required formControlName="machine_name">
+                                        <mat-option value="all">All</mat-option>
+
+                                        <mat-option *ngFor="let machine of machine_response" [value]="machine">
+                                        {{machine}}
+                                      </mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+                            </div>
+                            <div class="filter_field">
+
+                                <mat-form-field appearance="outline">
+                                    <mat-select placeholder="Select Shift" matNativeControl required formControlName="shift_num">
+                                        <mat-option value="all">All</mat-option>
+
+                                        <mat-option *ngFor="let shift of shift_response" [value]="shift.shift_no">
+                                        {{shift.shift_no}}
+                                      </mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+                            </div>
+                            <div class="filter_field date_picker" color="primary">
+
+                                <ejs-daterangepicker placeholder='Select a range' 
+                                    (click)="daterangepicker.open()" formControlName="date">
+                                    <e-presets>
+                                        <e-preset label="This Week" [start]='weekStart' [end]='weekEnd'></e-preset>
+                                        <e-preset label="This Month" [start]='monthStart' [end]='monthEnd'>
+                                        </e-preset>
+                                        <e-preset label="Last Month" [start]='lastStart' [end]='lastEnd'></e-preset>
+                                        <e-preset label="Last Year" [start]='yearStart' [end]='yearEnd'></e-preset>
+                                    </e-presets>
+                                </ejs-daterangepicker>
+                            </div>
+                            <button [disabled]="login.invalid" type="submit" color="primary" mat-raised-button>Submit</button>
+
+                        </div>
+                    </form>
+                    <div *ngIf="myLoader" class="spinner">
+                        <img src="assets/images/spinner.gif">
+                      </div>
+                    </div>
+                    <div class="two_row">
+                        <div class="col-md-6 col-sm-12">
+                            <ul class="pie_charts_utilizations">
+                                <li>
+
+                                    <label> <img src="../assets/images/running.png">Operate</label>
+                                    <span>{{get_report?.run_time}}%</span>
+                                </li>
+
+                                <li>
+                                    
+                                    <label><img src="../assets/images/idle.png">Stop</label>
+                                    <span>{{get_report?.idle_time}}%</span>
+                                </li>
+                                <li>
+
+                                    <label><img src="../assets/images/ic_nodata.png">Disconnect</label>
+                                    <span>{{get_report?.disconnect_time}}%</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-sm-12 pie-vh">
+                            <figure class="highcharts-figure">
+                                <div id="comparepie"></div>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="table_wrapper">
+                        <table class="table">
+                            <thead>
+                                <tr >
+                                    <th>S.No</th>
+                                    <th>Machine Name</th>
+                                    <th>Parts Targeted</th>
+                                    <th>Parts Produced</th>
+                                    <th>Run Time</th>
+
+                                    <th>Idle Time</th>
+                                    <th>No Data Time</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let show_table of get_report?.table ;let i= index" >
+                                <tr>
+                                    <td>{{i+1}}</td>
+                                    <td>{{show_table?.machine_name}}</td>
+                                    <td>---</td>
+                                    <td>{{show_table?.part_count}}</td>
+                                    <td>{{show_table?.run_time}}</td>
+                                    <td>{{show_table?.idle_time}}</td>
+                                    <td>{{show_table?.disconnect}}</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </mat-card>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <mat-card class="card_sec">
+                    <div class="filter_sec mt-1 mb-2">
+                        <form [formGroup]="test" (ngSubmit)="testfunction('true')">
+                        <div class="filter_fields">
+                            <div class="filter_field">
+
+                                <mat-form-field appearance="outline">
+                                    <mat-select placeholder="Select Machine" matNativeControl required formControlName="machine_name">
+                                        <mat-option value="all">All</mat-option>
+
+                                        <mat-option *ngFor="let a of machine_get" [value]="a">
+                                        {{a}}
+                                      </mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+                            </div>
+                            <div class="filter_field">
+
+                                <mat-form-field appearance="outline">
+                                    <mat-select placeholder="Select Shift" matNativeControl required formControlName="shift_num">
+                                        <mat-option value="all">All</mat-option>
+
+                                        <mat-option *ngFor="let b of select_shift" [value]="b.shift_no">
+                                        {{b.shift_no}}
+                                      </mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+                            </div>
+                            <div class="filter_field date_picker" color="primary">
+
+                                <ejs-daterangepicker placeholder='Select a range'  
+                                    (click)="daterangepicker.open()" formControlName="date"  >
+                                    <e-presets>
+                                        <e-preset label="This Week" [start]='weekStart' [end]='weekEnd'></e-preset>
+                                        <e-preset label="This Month" [start]='monthStart' [end]='monthEnd'>
+                                        </e-preset>
+                                        <e-preset label="Last Month" [start]='lastStart' [end]='lastEnd'></e-preset>
+                                        <e-preset label="Last Year" [start]='yearStart' [end]='yearEnd'></e-preset>
+                                    </e-presets>
+                                </ejs-daterangepicker>
+                            </div>
+                            <button [disabled]="test.invalid" type="submit" color="primary" mat-raised-button>Submit</button>
+
+                        </div>
+
+                    </form >
+                    </div>
+                    
+                    <div class="two_row">
+                        <div class="col">
+                            <ul class="pie_charts_utilizations">
+                                <li>
+
+                                    <label> <img src="../assets/images/running.png">Operate</label>
+                                    <span>{{report_table?.run_time}}%</span>
+                                </li>
+
+                                <li>
+
+                                    <label> <img src="../assets/images/idle.png">Stop</label>
+                                    <span>{{report_table?.idle_time}}%</span>
+                                </li>
+                                <li>
+
+                                    <label><img src="../assets/images/ic_nodata.png">Disconnect</label>
+                                    <span>{{report_table?.disconnect_time}}%</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col pie-vh">
+                            <figure class="highcharts-figure">
+                                <div id="comparepie2"></div>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="table_wrapper">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Machine Name</th>
+                                    <th>Parts Targeted</th>
+                                    <th>Parts Produced</th>
+                                    <th>Run Time</th>
+
+                                    <th>Idle Time</th>
+                                    <th>No Data Time</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let show_right of report_table?.table ;let i= index">
+                                <tr>
+                                    <td>{{i+1}}</td>
+                                    <td>{{show_right?.machine_name}}</td>
+                                    <td>---</td>
+                                    <td>{{show_right?.part_count}}</td>
+                                    <td>{{show_right?.run_time}}</td>
+                                    <td>{{show_right?.idle_time}}</td>
+                                    <td>{{show_right?.disconnect}}</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </mat-card>
+                <div *ngIf="myLoader1" class="spinner">
+                    <img src="assets/images/spinner.gif">
+                  </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>

@@ -1,0 +1,76 @@
+<div class="modal_sec">
+    <mat-toolbar class="forum">
+        <h3>New User Registaration</h3>
+        <button type="button" class="close" aria-label="Close" mat-dialog-close>
+            <span aria-hidden="true">×</span>
+        </button>
+    </mat-toolbar>
+    <div class="dialog-form">
+        <div class="filter_sec">
+            <form [formGroup]="userForm" (ngSubmit)="submit()" class="form_sec">
+                <div class="row_sec">
+                    <mat-form-field>
+                        <mat-label>First Name</mat-label>
+                        <input matInput formControlName="first_name" type="text">
+                        <mat-error *ngIf="userForm.controls['first_name'].errors?.required">First Name is Required
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Last Name</mat-label>
+                        <input matInput formControlName="last_name" type="text">
+                        <mat-error *ngIf="userForm.controls['last_name'].errors?.required">Last Name is Required
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Email Id</mat-label>
+                        <input matInput formControlName="email" type="email">
+                        <mat-error *ngIf="userForm.controls['email'].errors?.required">Email Id is Required
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field *ngIf="!editMode">
+                        <mat-label>Password</mat-label>
+                        <input matInput formControlName="password" type="password">
+                        <mat-error *ngIf="userForm.controls['password'].errors?.required">password is Required
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Mobile Number</mat-label>
+                        <input matInput formControlName="phone_no" pattern="[0-9]*" minlength="10" maxlength="10">
+                        <mat-error *ngIf="userForm.controls['phone_no'].errors?.required">Mobile Number is Required
+                        </mat-error>
+                        <mat-error *ngIf="userForm.controls['phone_no'].errors?.pattern">Please Enter a valid number
+                        </mat-error>
+                        <mat-error *ngIf="userForm.controls['phone_no'].errors?.maxlength">Mobile Number Should be 10
+                            digit
+                        </mat-error>
+
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Remarks</mat-label>
+                        <input matInput formControlName="remarks" type="text">
+                        <mat-error *ngIf="userForm.controls['remarks'].errors?.required">Remarks is Required
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-select formControlName="role">
+                            <mat-option value="" disabled>Select Role</mat-option>
+                            <mat-option [value]="role.id.$oid" *ngFor="let role of roles">{{role.role_name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="userForm.controls['role'].errors?.required"> Role is Required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-button text-right">
+                    <button mat-raised-button class="filter_btn btn_orange"> Save</button>
+                    <button mat-raised-button mat-dialog-close class="filter_btn btn_default ml-16">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
