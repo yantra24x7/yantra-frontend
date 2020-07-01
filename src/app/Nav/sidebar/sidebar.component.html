@@ -7,14 +7,15 @@
       </button>
       <div class="company_name">
         DEMO
-<!--            <img src="../../../assets/images/logo_lmw.png">
+        <!--            <img src="../../../assets/images/logo_lmw.png">
 
- -->        <!-- <h3>LMW</h3> -->
+ -->
+        <!-- <h3>LMW</h3> -->
       </div>
       <a class="logout" (click)="close()">
         <i class="material-icons">
           power_settings_new
-          </i>
+        </i>
       </a>
       <!-- <p class="edit"><i class="fa fa-edit"></i></p> -->
       <!-- <button class="logout" mat-raised-button (click)="close()">Logout</button> -->
@@ -34,6 +35,31 @@
             <mat-icon></mat-icon>
             <span>Dashboard</span>
           </a> -->
+
+      <button mat-icon-button matTooltip="Home" matTooltipPosition="right" [routerLink]="['/kpi_dashboard']">
+        <i class="material-icons">
+          home
+        </i>
+      </button>
+
+      <button mat-icon-button matTooltip="Machines" matTooltipPosition="right" [routerLink]="['/machine_details']">
+        <i class="material-icons">
+          settings_applications
+        </i>
+      </button>
+
+      <button mat-icon-button matTooltip="Analysis" matTooltipPosition="right" [routerLink]="['/trend_analysis']">
+        <i class="material-icons">
+          bar_chart
+        </i>
+      </button>
+
+      <button mat-icon-button matTooltip="Operator View" matTooltipPosition="right" [routerLink]="['/operator_view']">
+        <i class="material-icons">
+          pie_chart
+        </i>
+      </button>
+
       <button mat-icon-button matTooltip="Dashboard" routerLinkActive="active-link" matTooltipPosition="right"
         [routerLink]="['/dashboard']">
         <i class="material-icons">
@@ -58,7 +84,7 @@
       <button mat-icon-button matTooltip="OEE TV" routerLinkActive="active-link" matTooltipPosition="right"
         [routerLink]="['/chart']">
         <i class="material-icons">
-       <mat-icon>tv</mat-icon>
+          <mat-icon>tv</mat-icon>
         </i>
       </button>
 
@@ -86,7 +112,7 @@
           equalizer
         </i>
       </button>
-    
+
 
 
       <!-- <li routerLinkActive="active-link">
@@ -226,24 +252,24 @@
           </i>
         </button> -->
         <button mat-icon-button matTooltip="Reason" routerLinkActive="active-link" matTooltipPosition="right"
-        [routerLink]="['/reason_lmw']">
-        <i class="material-icons">
-          markunread_mailbox
-        </i>
-      </button>
+          [routerLink]="['/reason_lmw']">
+          <i class="material-icons">
+            markunread_mailbox
+          </i>
+        </button>
 
 
-      <button mat-icon-button matTooltip="Production Report " routerLinkActive="active-link" matTooltipPosition="right"
-      [routerLink]="['/idle_reason']">
-      <i class="material-icons">
-        assignment
+        <button mat-icon-button matTooltip="Production Report " routerLinkActive="active-link"
+          matTooltipPosition="right" [routerLink]="['/idle_reason']">
+          <i class="material-icons">
+            assignment
 
 
-      </i>
-    </button>
+          </i>
+        </button>
 
-    <button mat-icon-button matTooltip="Idle Reason Report" routerLinkActive="active-link" matTooltipPosition="right"
-          [routerLink]="['/report_idle']">
+        <button mat-icon-button matTooltip="Idle Reason Report" routerLinkActive="active-link"
+          matTooltipPosition="right" [routerLink]="['/report_idle']">
           <i class="material-icons">
             data_usage
           </i>
@@ -256,7 +282,7 @@
           </i>
         </button>
 
-    <!-- <button mat-icon-button matTooltip="OEE" routerLinkActive="active-link" matTooltipPosition="right"
+        <!-- <button mat-icon-button matTooltip="OEE" routerLinkActive="active-link" matTooltipPosition="right"
           [routerLink]="['/oee']">
           <i class="material-icons">
             markunread_mailbox

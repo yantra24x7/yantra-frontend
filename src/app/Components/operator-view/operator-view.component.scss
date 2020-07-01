@@ -1,0 +1,736 @@
+::ng-deep circle-progress {
+    tspan {
+        font-weight: 600;
+        fill: #3F3F3F;
+        font-size: 24px;
+            &:nth-child(3) {
+                display: none;
+        }
+    }
+}
+::ng-deep .oee_progress_bar{
+        text-align: center;
+        circle-progress{
+            svg {
+                width: 200px;
+                height: 200px;
+            }
+    }  
+}
+::ng-deep .parts_statistics{
+.progress_bar{
+    text-align: center;
+    circle-progress{
+        svg {
+            width: 240px;
+            height: 240px;
+        }
+        tspan{
+            &:nth-child(2) {
+                display: none;
+            }
+        }
+    }
+}
+}
+::ng-deep.highcharts-container {
+    text {
+        font-size: 12px;
+    }
+}
+::ng-deep circle-progress {
+     text {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    transform: translate(0%, 10%);
+}
+}
+#page_area {
+    &.page{
+        background-color: #16A500;
+        padding-left: 0;
+        padding-right: 0;
+        .top_header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-image: linear-gradient(to bottom, #1EAD55, #0F572B);
+            padding: 10px 15px;
+            color: #fff;
+            .operator_title{
+                h1{
+                    font-size: 28px;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                }
+                p{
+                    margin: 0;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+            }
+            .operator_downtime{
+                text-align: center;
+                h6{
+                    font-size: 16px;
+                    text-transform: uppercase;
+                }
+                h4{
+                    font-size: 42px;
+                    font-weight: 300;
+                    margin: 0;
+                }
+            }
+            .operator_status{
+                display: flex;
+                align-items: center;
+                p{
+                    margin: 0;
+                    font-size: 16px;
+                    span{
+
+                    }
+                }
+                i{
+                    font-size: 35px;
+                    color: #30a518;
+                    margin-left: 5px;
+                }
+            }
+
+        }
+        .content_body{
+            padding: 15px 15px 1px 15px;
+            .action_sec{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .btn{
+                    color: #fff;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    margin: 0!important;
+                    width: 48%;
+                    border: 0;
+                    border-radius: 10px;
+                    padding: 14px 0;
+                    &.reason_btn{
+                        background-image: linear-gradient(to bottom, #E8A24A, #745125);
+                    }
+                    &.production_btn{
+                        background-image: linear-gradient(to bottom, #1EAD55, #0F572B);
+                    }
+                }
+            }
+        }
+            .statistics{
+                margin-top: 15px;
+                margin-bottom: 15px;
+                .content_box{
+                    background: #fff;
+                    border-radius: 5px;
+                    padding: 15px;
+                    .content_title{
+                        h3{
+                            font-size: 18px;
+                            color: #4B4B4B;
+                            font-weight: 500;
+                        }
+                    }
+                    .machine_metrics{
+                        display: flex;
+                        justify-content: space-around;
+                        .progress_bar{
+                            position: relative;
+                            span{
+                                position: absolute;
+                                top: 20%;
+                                left: 44%;
+                                font-size: 16px;
+                                font-weight: 600;
+                                color: #056B2D;
+                            }
+                        }
+                    }
+                    .metrics_list{
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        text-align: center;
+                            .content_title{
+                                 h3 {
+                                font-size: 14px;
+                            }
+                            }
+                        .progress_bar{
+                            position: relative;
+                            &.quality{
+                                span{
+                                    color: #ff9d01;
+                                }  
+                            }
+                            &.performance{
+                                span{
+                                    color: #d61414;
+                                }  
+                            }
+                            &.availability{
+                                span{
+                                    color: #18c0cd;
+                                }  
+                            }
+                            span{
+                                position: absolute;
+                                top: 32%;
+                                left: 45%;
+                                font-size: 14px;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                
+                }
+
+                .hour_based_metics{
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 15px;
+                    .content_box {
+                        width: 48%;
+                        position: relative;
+                        .main_value {
+                            position: absolute;
+                            top: 0px;
+                            right: 5px;
+                            background: #f8f8f8;
+                            margin: 11px;
+                            border: 1px solid #f6f6f6;
+                            padding: 10px;
+                            text-align: center;
+                            p {
+                                font-size: 20px;
+                                margin: 0;
+                                font-size: 19px;
+                                font-weight: 600;
+                                color: #056b2d;
+                            }
+                            span {
+                                margin: 0;
+                                font-size: 14px;
+                                color: #16A500;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+               .parts_statistics{
+                    .progress_bar{
+                        text-align: center;
+                        position: relative;
+                         p {
+                            position: absolute;
+                            top: 52%;
+                            left: 50%;
+                            transform: translate(-45%, 100%);
+                            font-size: 12px;
+                            font-weight: 600;
+                            text-transform: uppercase;
+                            color: #4B4B4B;
+                            
+                        }
+                    }
+                    .parts_series{
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+                        margin: 33px 20px;
+                        li{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            border-left: 3px solid #16a500;
+                            margin: 10px 0 0 0;
+                            padding: 0 5px;
+                            p{
+                                font-size: 14px;
+                                font-weight: 500;
+                                margin-bottom: 0;
+                                text-transform: uppercase;
+                                font-weight: 600;
+                                color: #4B4B4B;
+                            }
+                            span{
+
+                            }
+                            h4{
+                                color: #056B2D;
+                                font-size: 14px; 
+                            }
+                        }
+                    }
+                    .operator_cycle{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        background: #056B2D;
+                        padding: 15px;
+                        .expected_cycle{
+                            text-align: left;
+                            color: #fff;
+                            h4{
+                                font-size: 42px;
+                                font-size: 42px;
+                                font-weight: 300;
+                                margin-bottom: 5px;
+                            }
+                            span{
+                                font-size: 16px;
+                                font-weight: 600;
+                                margin: 0;
+                            }
+                        }
+                        .cycle_list{
+                            p{
+                                margin: 0;
+                                font-size: 14px;
+                                color: #35c61e;
+                                font-weight: 600;
+                                span{
+                                    font-weight: 600;
+                                    color: #fff;
+                                    font-size: 16px;
+                                    padding-right: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+       
+            .bottom_footer{
+                background: #0F572B;
+                  padding: 10px 15px;
+                  border-top: 1px solid #bcbcbc;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                .back_btn{
+                    background-image: linear-gradient(to bottom, #1EAD55, #0F572B);
+                    width: 35px;
+                    height: 35px;
+                    position: relative;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    i{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        color: #fff;
+                        font-size: 16px;
+                    }
+                }
+                .zoom_out{
+                    i{
+                        color: #fff;
+                        cursor: pointer;
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .active{
+                .top_header{
+                    background-image: linear-gradient(to bottom, #1EAD55, #0F572B);
+                    color: #fff;
+                    .operator_status{
+                        i{
+                            color: #30a518;
+                        }
+                    }
+        
+                }
+                .content_body{
+                    .action_sec{
+                        .btn{
+                            color: #fff;
+                           
+                            &.reason_btn{
+                                background-image: linear-gradient(to bottom, #E8A24A, #745125);
+                            }
+                            &.production_btn{
+                                background-image: linear-gradient(to bottom, #1EAD55, #0F572B);
+                            }
+                        }
+                    }
+                }
+                    .statistics{
+                        .content_box{
+                            background: #fff;
+                            .content_title{
+                                h3{
+                                    color: #4B4B4B;
+                                }
+                            }
+                            .machine_metrics{
+                                .progress_bar{
+                                    span{
+                                        color: #056B2D;
+                                    }
+                                }
+                            }
+                            .metrics_list{
+                                
+                                .progress_bar{
+                                    &.quality{
+                                        span{
+                                            color: #ff9d01;
+                                        }  
+                                    }
+                                    &.performance{
+                                        span{
+                                            color: #d61414;
+                                        }  
+                                    }
+                                    &.availability{
+                                        span{
+                                            color: #18c0cd;
+                                        }  
+                                    }
+                                }
+                            }
+                        
+                        }
+        
+                        .hour_based_metics{
+                            .content_box {
+                                .main_value {
+                                    background: #f8f8f8;
+                                    border: 1px solid #f6f6f6;
+                                    p {
+                                        color: #056b2d;
+                                    }
+                                    span {
+                                        color: #16A500;
+                                    }
+                                }
+                            }
+                        }
+                       .parts_statistics{
+                            .progress_bar{
+                                 p {
+                                    color: #4B4B4B;
+                                }
+                            }
+                            .parts_series{
+                                li{
+                                    border-left: 3px solid #16a500;
+                                    p{
+                                        color: #4B4B4B;
+                                    }
+                                    h4{
+                                        color: #056B2D;
+                                    }
+                                }
+                            }
+                            .operator_cycle{
+                                background: #056B2D;
+                                .expected_cycle{
+                                    color: #fff;
+                                }
+                                .cycle_list{
+                                    p{
+                                        color: #35c61e;
+                                        span{
+                                            color: #fff;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+               
+                    .bottom_footer{
+                          border-top: 1px solid #bcbcbc;
+                        .back_btn{
+                            background-image: linear-gradient(to bottom, #1EAD55, #0F572B);
+                        }
+                        .zoom_out{
+                            i{
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+
+            .idle{
+            .top_header{
+                background-image: linear-gradient(to bottom, #6d6d6d, #373737);
+                color: #fff;
+                .operator_status{
+                    i{
+                        color: #696969;
+                    }
+                }
+
+            }
+            .content_body{
+                background: #696969;
+                .action_sec{
+                    .btn{
+                        color: #fff;
+                        
+                        &.reason_btn{
+                            background-image: linear-gradient(to bottom, #E8A24A, #745125);
+                        }
+                        &.production_btn{
+                            background-image: linear-gradient(to bottom, #6d6d6d, #373737);
+                        }
+                    }
+                }
+            }
+                .statistics{
+                    .content_box{
+                        background: #fff;
+                        .content_title{
+                            h3{
+                                color: #4B4B4B;
+                            }
+                        }
+                        .machine_metrics{
+                            .progress_bar{
+                                span{
+                                    color: #056B2D;
+                                }
+                            }
+                        }
+                        .metrics_list{
+                            
+                            .progress_bar{
+                                &.quality{
+                                    span{
+                                        color: #ff9d01;
+                                    }  
+                                }
+                                &.performance{
+                                    span{
+                                        color: #d61414;
+                                    }  
+                                }
+                                &.availability{
+                                    span{
+                                        color: #18c0cd;
+                                    }  
+                                }
+                            }
+                        }
+                    
+                    }
+
+                    .hour_based_metics{
+                        .content_box {
+                            .main_value {
+                                background: #f8f8f8;
+                                border: 1px solid #f6f6f6;
+                                p {
+                                    color: #056b2d;
+                                }
+                                span {
+                                    color: #16A500;
+                                }
+                            }
+                        }
+                    }
+                    .parts_statistics{
+                        .progress_bar{
+                                p {
+                                color: #4B4B4B;
+                            }
+                        }
+                        .parts_series{
+                            li{
+                                border-left: 3px solid #696969;
+                                p{
+                                    color: #4B4B4B;
+                                }
+                                h4{
+                                    color: #2C2F34;
+                                }
+                            }
+                        }
+                        .operator_cycle{
+                            background: #2C2F34;
+                            .expected_cycle{
+                                color: #fff;
+                            }
+                            .cycle_list{
+                                p{
+                                    color: #848484;
+                                    span{
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .bottom_footer{
+                        border-top: 1px solid #bcbcbc;
+                        background: #444444;
+                    .back_btn{
+                        background-image: linear-gradient(to bottom, #6d6d6d, #373737);
+                    }
+                    .zoom_out{
+                        i{
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            .stop{
+                .top_header{
+                    background-image: linear-gradient(to bottom, #ED5550, #772B28);
+                    color: #fff;
+                    .operator_status{
+                        i{
+                            color: #F81301;
+                        }
+                    }
+        
+                }
+                .content_body{
+                    background: #F81301;
+                    .action_sec{
+                        .btn{
+                            color: #fff;
+                           
+                            &.reason_btn{
+                                background-image: linear-gradient(to bottom, #955159, #3D1116);
+                            }
+                            &.production_btn{
+                                background-image: linear-gradient(to bottom, #ED5550, #772B28);
+                            }
+                        }
+                    }
+                }
+                    .statistics{
+                        .content_box{
+                            background: #fff;
+                            .content_title{
+                                h3{
+                                    color: #4B4B4B;
+                                }
+                            }
+                            .machine_metrics{
+                                .progress_bar{
+                                    span{
+                                        color: #056B2D;
+                                    }
+                                }
+                            }
+                            .metrics_list{
+                                
+                                .progress_bar{
+                                    &.quality{
+                                        span{
+                                            color: #ff9d01;
+                                        }  
+                                    }
+                                    &.performance{
+                                        span{
+                                            color: #d61414;
+                                        }  
+                                    }
+                                    &.availability{
+                                        span{
+                                            color: #18c0cd;
+                                        }  
+                                    }
+                                }
+                            }
+                        
+                        }
+        
+                        .hour_based_metics{
+                            .content_box {
+                                .main_value {
+                                    background: #f8f8f8;
+                                    border: 1px solid #f6f6f6;
+                                    p {
+                                        color: #C91A0D;
+                                    }
+                                    span {
+                                        color: #F81301;
+                                    }
+                                }
+                            }
+                        }
+                       .parts_statistics{
+                            .progress_bar{
+                                 p {
+                                    color: #4B4B4B;
+                                }
+                            }
+                            .parts_series{
+                                li{
+                                    border-left: 3px solid #F81301;
+                                    p{
+                                        color: #4B4B4B;
+                                    }
+                                    h4{
+                                        color: #792B28;
+                                    }
+                                }
+                            }
+                            .operator_cycle{
+                                background: #792B28;
+                                .expected_cycle{
+                                    color: #fff;
+                                }
+                                .cycle_list{
+                                    p{
+                                        color: #f74a3c;
+                                        span{
+                                            color: #fff;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+               
+                    .bottom_footer{
+                          border-top: 1px solid #bcbcbc;
+                          background: #BA1D11;
+                        .back_btn{
+                            background-image: linear-gradient(to bottom, #ED5550, #772B28);
+                        }
+                        .zoom_out{
+                            i{
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+           }
+}
+
+
+// Responsive style
+@media only screen and (max-width:768px){
+    .parts_statistics {
+        margin-top: 15px;
+    }
+}
+@media only screen and (min-device-width: 320px) 
+                   and (max-device-width: 768px) 
+                   and (orientation: landscape) {
+                    .parts_series {
+                        margin: 33px 20px;
+                    }
+                   
+                }

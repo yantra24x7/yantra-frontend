@@ -1,0 +1,116 @@
+<section class="page" id="page_area">
+    <div class="section_top_padding">
+        <div class="container-fluid">
+            <div class="page_title_sec">
+                <h2 class="sub_title">
+                    Trend Analysis
+                </h2>
+                <ul class="filter_sec">
+                    <li>
+                        <mat-form-field>
+                            <mat-label>Column Metrics</mat-label>
+                            <mat-select>
+                                <mat-option value="Value 1">Value 1</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </li>
+                    <li>
+                        <mat-form-field>
+                            <mat-label>Row Metrics</mat-label>
+                            <mat-select>
+                                <mat-option value="Value 1">Value 1</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </li>
+                    <li>
+                        <mat-form-field>
+                            <mat-label>Time Period</mat-label>
+                            <mat-select>
+                                <mat-option value="Value 1">Value 1</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </li>
+                    <li>
+                        <div class="table_search">
+                            <input class="form-control" (keyup)="doFilter($event.target.value)" type="text"
+                                name="search" [(ngModel)]="searchText" placeholder="Search">
+                        </div>
+                    </li>
+                    <li>
+                        <button mat-mini-fab class="refresh_btn" aria-label="Refresh">
+                            <mat-icon>refresh</mat-icon>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="table_sec">
+                <mat-card class="card_sec">
+                    <mat-card-content class="table_responsive">
+                      <table class="row" mat-table [dataSource]="dataSource" class="mat-elevation-z0">
+                            <!-- Machine Definition -->
+                            <ng-container matColumnDef="machine">
+                              <mat-header-cell *matHeaderCellDef> Machine </mat-header-cell>
+                              <mat-cell *matCellDef="let row"> 54% </mat-cell>
+                            </ng-container>
+                          
+                            <!-- Overall Definition -->
+                            <ng-container matColumnDef="overall">
+                              <mat-header-cell *matHeaderCellDef> Overall </mat-header-cell>
+                              <mat-cell *matCellDef="let row"> {{row.overall}} </mat-cell>
+                            </ng-container>
+                          
+                            <!-- Trend Definition -->
+                            <ng-container matColumnDef="trend">
+                              <mat-header-cell *matHeaderCellDef> Trend </mat-header-cell>
+                              <mat-cell *matCellDef="let row"> {{row.trend}} </mat-cell>
+                            </ng-container>
+
+
+                             <!-- jan Definition -->
+                             <ng-container matColumnDef="jan">
+                                <mat-header-cell *matHeaderCellDef> Jan </mat-header-cell>
+                                <mat-cell *matCellDef="let row"> {{row.jan}} </mat-cell>
+                              </ng-container>
+                            
+                              <!-- feb Definition -->
+                              <ng-container matColumnDef="feb">
+                                <mat-header-cell *matHeaderCellDef> Feb </mat-header-cell>
+                                <mat-cell *matCellDef="let row"> {{row.feb}} </mat-cell>
+                              </ng-container>
+                            
+                              <!-- mar Definition -->
+                              <ng-container matColumnDef="mar">
+                                <mat-header-cell *matHeaderCellDef> Mar </mat-header-cell>
+                                <mat-cell *matCellDef="let row"> {{row.mar}} </mat-cell>
+                              </ng-container>
+
+                               <!-- Apr Definition -->
+                             <ng-container matColumnDef="apr">
+                                <mat-header-cell *matHeaderCellDef> Apr </mat-header-cell>
+                                <mat-cell *matCellDef="let row"> {{row.apr}} </mat-cell>
+                              </ng-container>
+                            
+                              <!-- May Definition -->
+                              <ng-container matColumnDef="may">
+                                <mat-header-cell *matHeaderCellDef> May </mat-header-cell>
+                                <mat-cell *matCellDef="let row"> {{row.may}} </mat-cell>
+                              </ng-container>
+                            
+                              <!-- Jun Definition -->
+                              <ng-container matColumnDef="jun">
+                                <mat-header-cell *matHeaderCellDef> Jun </mat-header-cell>
+                                <mat-cell *matCellDef="let row"> {{row.jun}} </mat-cell>
+                              </ng-container>
+                          
+                            <!-- Header and Row Declarations -->
+                            <mat-header-row *matHeaderRowDef="['machine', 'overall', 'trend', 'jan', 'feb', 'mar', 'apr', 'may', 'jun']"></mat-header-row>
+                            <mat-row *matRowDef="let row; columns: ['machine', 'overall', 'trend', 'jan', 'feb', 'mar', 'apr', 'may', 'jun']"></mat-row>
+                        </table>
+        
+                    </mat-card-content>
+                  </mat-card>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,198 @@
+<section class="page" id="page_area">
+    <div class="section_top_padding">
+        <div class="container-fluid">
+            <div class="page_title_sec">
+                <h2 class="sub_title">
+                    KPI Dashboard
+                </h2>
+                <ul class="machine_identifier">
+                    <li class="active"> <i class="material-icons">
+                            fiber_manual_record
+                        </i>
+                        <span>Optimal-OEE</span></li>
+                    <li class="idle"> <i class="material-icons">
+                            fiber_manual_record
+                        </i>
+                        <span>Not Reported</span></li>
+                    <li class="stop"> <i class="material-icons">
+                            fiber_manual_record
+                        </i>
+                        <span>Poor-OEE</span></li>
+                        <!-- <li>
+                            <div class="table_search">
+                                <input class="form-control" (keyup)="doFilter($event.target.value)" type="text" name="search" [(ngModel)]="searchText" placeholder="Search">
+                              </div>
+                        </li> -->
+                </ul>
+            </div>
+
+            <div class="machine_list">
+                <div class="machine_item active">
+                    <div class="machine_header">
+                        <div class="machine_title">
+                            <span class="material-icons">
+                                check_circle_outline
+                            </span>
+                            <div class="machine_name pl-2">
+                                <h3>Machine XS</h3>
+                                <p>0006</p>
+                            </div>
+                        </div>
+                        <p class="status">
+                            <i class="material-icons">
+                                fiber_manual_record
+                            </i>
+                            <span>2hrs | 16min</span>
+                        </p>
+                    </div>
+                    <div class="machine_body">
+                        <div class="progress_bar">
+                            <circle-progress [percent]="retrieved" [radius]="50" [outerStrokeColor]="'#056B2D'"
+                                [innerStrokeColor]="'#eee'"></circle-progress>
+                        </div>
+                        <ul class="metrics list-unstyle">
+                            <li>
+                                <p>Availability</p>
+                                <span>80%</span>
+                            </li>
+                            <li>
+                                <p>Performance</p>
+                                <span>80%</span>
+                            </li>
+                            <li>
+                                <p>Quality</p>
+                                <span>80%</span>
+                            </li>
+                        </ul>
+                        <div class="parts_sec">
+                            <p>Parts</p>
+                        </div>
+                        <div class="machine_values">
+                            <p>Actual / Plan : <span>120 / 100</span></p>
+                        </div>
+                        <div class="graph">
+                            <figure class="highcharts-figure">
+                                <div id="container"></div>
+                            </figure>
+                        </div>
+                        <div class="graph_text">
+                            <p>Parts per hour</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="machine_item idle">
+                    <div class="machine_header">
+                        <div class="machine_title">
+                            <span class="material-icons">
+                                check_circle_outline
+                            </span>
+                            <div class="machine_name pl-2">
+                                <h3>Machine XS</h3>
+                                <p>0006</p>
+                            </div>
+                        </div>
+                        <p class="status">
+                            <i class="material-icons">
+                                fiber_manual_record
+                            </i>
+                            <span>2hrs | 16min</span>
+                        </p>
+                    </div>
+                    <div class="machine_body">
+                        <div class="progress_bar">
+                            <circle-progress [percent]="retrieved" [radius]="50" [outerStrokeColor]="'#646262'"
+                                [innerStrokeColor]="'#eee'"></circle-progress>
+                        </div>
+                        <ul class="metrics list-unstyle">
+                            <li>
+                                <p>Availability</p>
+                                <span>80%</span>
+                            </li>
+                            <li>
+                                <p>Performance</p>
+                                <span>80%</span>
+                            </li>
+                            <li>
+                                <p>Quality</p>
+                                <span>80%</span>
+                            </li>
+                        </ul>
+                        <div class="parts_sec">
+                            <p>Parts</p>
+                        </div>
+                        <div class="machine_values">
+                            <p>Actual / Plan : <span>120 / 100</span></p>
+                        </div>
+                        <div class="graph">
+                            <figure class="highcharts-figure">
+                                <div id="container2"></div>
+                            </figure>
+                        </div>
+                        <div class="graph_text">
+                            <p>Parts per hour</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="machine_item stop">
+                    <div class="machine_header">
+                        <div class="machine_title">
+                            <span class="material-icons">
+                                check_circle_outline
+                            </span>
+                            <div class="machine_name pl-2">
+                                <h3>Machine XS</h3>
+                                <p>0006</p>
+                            </div>
+                        </div>
+                        <p class="status">
+                            <i class="material-icons">
+                                fiber_manual_record
+                            </i>
+                            <span>2hrs | 16min</span>
+                        </p>
+                    </div>
+                    <div class="machine_body">
+                        <div class="progress_bar">
+                            <circle-progress [percent]="retrieved" [radius]="50" [outerStrokeColor]="'#BA1D11'"
+                                [innerStrokeColor]="'#eee'"></circle-progress>
+                        </div>
+                        <ul class="metrics list-unstyle">
+                            <li>
+                                <p>Availability</p>
+                                <span>80%</span>
+                            </li>
+                            <li>
+                                <p>Performance</p>
+                                <span>80%</span>
+                            </li>
+                            <li>
+                                <p>Quality</p>
+                                <span>80%</span>
+                            </li>
+                        </ul>
+                        <div class="parts_sec">
+                            <p>Parts</p>
+                        </div>
+                        <div class="machine_values">
+                            <p>Actual / Plan : <span>120 / 100</span></p>
+                        </div>
+                        <div class="graph">
+                            <figure class="highcharts-figure">
+                                <div id="container3"></div>
+                            </figure>
+                        </div>
+                        <div class="graph_text">
+                            <p>Parts per hour</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

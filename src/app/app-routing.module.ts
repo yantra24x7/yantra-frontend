@@ -69,6 +69,10 @@ import { NgModule } from '@angular/core';
       },
     { path: 'oee', loadChildren: () => import('./Components/oee/oee.module').then(m => m.OeeModule) },
     { path: 'chart', loadChildren: () => import('./Components/chart/chart.module').then(m => m.ChartModule) },
+    { path: 'trend_analysis', loadChildren: () => import('./Components/trend-analysis/trend-analysis.module').then(m => m.TrendAnalysisModule) },
+    { path: 'machine_details', loadChildren: () => import('./Components/machine-details/machine-details.module').then(m => m.MachineDetailsModule) },
+    { path: 'operator_view', loadChildren: () => import('./Components/operator-view/operator-view.module').then(m => m.OperatorViewModule) },
+    { path: 'kpi_dashboard', loadChildren: () => import('./Components/kpi-dashboard/kpi-dashboard.module').then(m => m.KpiDashboardModule) },
     
     
     ]

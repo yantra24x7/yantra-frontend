@@ -1,0 +1,65 @@
+
+
+
+#page_area {
+    &.page{
+        background-color: #fafafa;
+        .page_title_sec {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #DEDEDE;
+            margin-bottom: 15px;
+            .sub_title {
+                font-size: 18px;
+                font-weight: 600;
+                color: #1A1F3D;
+                margin-bottom: 15px;
+            }
+            .filter_sec{
+                list-style: none;
+                display: flex;
+                align-items: center;
+                li{
+                    display: flex;
+                    margin-left: 10px;
+                    .refresh_btn{
+                        background-color: #fb8c0c;
+                        color:#fff;
+                       }
+                    .table_search{
+                        .form-control{
+                            height: 35px;
+                        }
+                    }
+                }
+            }
+        }
+            
+    }
+}
+::ng-deep .table_sec{
+mat-card{
+    background: #fff;
+    border: 1px solid #fff;
+    box-shadow: unset;
+    padding: 0;
+    &.card_sec{
+    table{
+        font-size: 0.9em;
+        color: #666;
+            mat-header-row {
+                    background-color: #111215;
+                        font-size: 14px;
+                        font-weight: 500;
+                        color: #A8A8A8;
+                        min-height: 35px;
+                            mat-header-cell {
+                                color: #fff;
+                                text-transform: CAPITALIZE;
+                            }
+            }
+        }
+    }
+}
+}
