@@ -73,6 +73,7 @@ import { NgModule } from '@angular/core';
     { path: 'machine_details', loadChildren: () => import('./Components/machine-details/machine-details.module').then(m => m.MachineDetailsModule) },
     { path: 'operator_view', loadChildren: () => import('./Components/operator-view/operator-view.module').then(m => m.OperatorViewModule) },
     { path: 'kpi_dashboard', loadChildren: () => import('./Components/kpi-dashboard/kpi-dashboard.module').then(m => m.KpiDashboardModule) },
+    { path: 'machine_view', loadChildren: () => import('./Components/machine-view/machine-view.module').then(m => m.MachineViewModule) },
     
     
     ]

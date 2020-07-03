@@ -32,3 +32,50 @@ width:20px; }
   width: 90px;
   margin-top: -130px;
 }
+
+
+// Custom Style
+.right_sec{
+  .view_btn{
+    background-color: #fb8c0c;
+    color:#fff;
+   }
+   .table_search{
+     .form-control{
+       height: 35px;
+     }
+   }
+}
+
+.view_graph{
+  border-radius: 5px;
+  border: 1px solid #3E3F43;
+  margin-bottom: 15px;
+  padding: 15px;
+  padding-bottom: 0;
+}
+
+::ng-deep.view_graph{
+  .highcharts-yaxis {
+    text {
+      fill: #fff!important;
+    }
+  }
+}
+::ng-deep.view_graph{
+  .highcharts-yaxis-labels{
+  text {
+    fill: #fff !important;
+  }
+}
+}
+
+::ng-deep.view_graph{
+  .highcharts-xaxis-labels{
+  text {
+    font-size: 11px;
+    fill: #fff!important;
+    text-decoration: underline;
+  }
+}
+}

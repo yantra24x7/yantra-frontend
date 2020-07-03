@@ -11,9 +11,22 @@
         <mat-icon class="v-align-middle display">alarm</mat-icon>
         <span class="v-align-middle">Overall Alarm History</span>
       </h2>
-      <div class="table_search">
-        <input class="form-control" (keyup)="doFilter($event.target.value)" type="text" name="search" [(ngModel)]="searchText" placeholder="Search">
+      <div class="right_sec">
+        <button type="text" class="view_btn mr-2" mat-button (click) = toggleDisplay()>View Chart</button>
+        <div class="table_search">
+          <input class="form-control" (keyup)="doFilter($event.target.value)" type="text" name="search"
+            [(ngModel)]="searchText" placeholder="Search">
+        </div>
       </div>
+      <!-- <div class="table_search">
+        <input class="form-control" (keyup)="doFilter($event.target.value)" type="text" name="search" [(ngModel)]="searchText" placeholder="Search">
+      </div> -->
+    </div>
+
+    <div class="view_graph" [hidden] = "isShow">
+      <figure class="highcharts-figure">
+        <div id="container"></div>
+      </figure>
     </div>
 
     <mat-card class="card_sec">
