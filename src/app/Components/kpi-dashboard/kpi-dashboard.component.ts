@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-kpi-dashboard',
   templateUrl: './kpi-dashboard.component.html',
@@ -8,9 +8,17 @@ import * as Highcharts from 'highcharts';
 })
 export class KpiDashboardComponent implements OnInit {
   Highcharts: typeof Highcharts = Highcharts;
-  constructor() { }
+  machine_response:any;
+  constructor(private http:HttpClient) { }
 
   ngOnInit() {
+
+
+    this.http.get('http://192.168.1.160:3000/users').subscribe(res =>{
+      console.log(res);
+      this.machine_response = res;
+      console.log(this.machine_response)
+    })
     //Active
     Highcharts.chart('container', {
       chart: {

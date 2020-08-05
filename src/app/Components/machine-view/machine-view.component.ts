@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import * as Highcharts from 'highcharts';
+
+declare var Highcharts: any;
+
 
 @Component({
   selector: 'app-machine-view',
@@ -7,16 +9,18 @@ import * as Highcharts from 'highcharts';
   styleUrls: ['./machine-view.component.scss']
 })
 export class MachineViewComponent implements OnInit {
-  Highcharts: typeof Highcharts = Highcharts;
+  Highcharts = Highcharts;
   constructor() { }
 
   ngOnInit() {
-     Highcharts.chart('container', {
+    
+
+    var container = Highcharts.chart('container', {
       credits: {
         enabled: false
       },
       chart: {
-        type: 'solidgauge',
+        type: 'gauge',
         plotBackgroundColor: null,
         plotBackgroundImage: null,
         plotBorderWidth: 0,
@@ -86,7 +90,6 @@ export class MachineViewComponent implements OnInit {
       },
       series: [{
         name: 'Spindle Speed',
-        type: undefined,
         // data: ['80'spindlespeed],
         data: [{
           color: '#fff',
@@ -112,15 +115,18 @@ export class MachineViewComponent implements OnInit {
         tooltip: {
           valueSuffix: ' RPM'
         },
+       
       }],
 
     });
-    Highcharts.chart('container2', {
+
+
+    var container = Highcharts.chart('container2', {
       credits: {
         enabled: false
       },
       chart: {
-        type: 'solidgauge',
+        type: 'gauge',
         plotBackgroundColor: null,
         plotBackgroundImage: null,
         plotBorderWidth: 0,
@@ -188,7 +194,6 @@ export class MachineViewComponent implements OnInit {
       },
       series: [{
         name: 'Spindle Speed',
-        type: undefined,
         // data: ['80'spindlespeed],
         background: '#fff',
         data: [{
@@ -216,7 +221,7 @@ export class MachineViewComponent implements OnInit {
         tooltip: {
           valueSuffix: 'm/min'
         },
-       
+      
       }]
 
     });

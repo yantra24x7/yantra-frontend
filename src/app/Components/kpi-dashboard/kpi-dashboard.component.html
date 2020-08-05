@@ -1,6 +1,6 @@
 <section class="page" id="page_area">
-    <div class="section_top_padding">
-        <div class="container-fluid">
+    <div class="section_top_padding" >
+        <div class="container-fluid" >
             <div class="page_title_sec">
                 <h2 class="sub_title">
                     KPI Dashboard
@@ -18,24 +18,20 @@
                             fiber_manual_record
                         </i>
                         <span>Poor-OEE</span></li>
-                        <!-- <li>
-                            <div class="table_search">
-                                <input class="form-control" (keyup)="doFilter($event.target.value)" type="text" name="search" [(ngModel)]="searchText" placeholder="Search">
-                              </div>
-                        </li> -->
+                      
                 </ul>
             </div>
 
-            <div class="machine_list">
-                <div class="machine_item active">
+            <div class="machine_list" *ngFor ="let machine of machine_response">
+                <div class="machine_item active" >
                     <div class="machine_header">
                         <div class="machine_title">
                             <span class="material-icons">
                                 check_circle_outline
                             </span>
                             <div class="machine_name pl-2">
-                                <h3>Machine XS</h3>
-                                <p>0006</p>
+                                <h3>{{machine?.machine_name}}</h3>
+                                <!-- <p>0006</p> -->
                             </div>
                         </div>
                         <p class="status">
@@ -47,21 +43,25 @@
                     </div>
                     <div class="machine_body">
                         <div class="progress_bar">
-                            <circle-progress [percent]="retrieved" [radius]="50" [outerStrokeColor]="'#056B2D'"
-                                [innerStrokeColor]="'#eee'"></circle-progress>
+                            <!-- <circle-progress [percent]="retrieved" [radius]="50" [outerStrokeColor]="'#056B2D'"
+                                [innerStrokeColor]="'#eee'"></circle-progress> -->
+
+                                <circle-progress percent={{machine?.oee}} radius="65" outerStrokeColor="#1EAD55" innerStrokeColor="#21402D" animation="true" animationDuration="300" *ngIf="machine?.status === 'OPERATE'"></circle-progress> 
+               <circle-progress percent={{machine?.oee}} radius="65" outerStrokeColor="#E8A24A" innerStrokeColor="#21402D" animation="true" animationDuration="300" *ngIf="machine?.status === 'STOP'"></circle-progress> 
+               <circle-progress percent={{machine?.oee}} radius="65" outerStrokeColor="#6D6D6D" innerStrokeColor="#21402D" animation="true" animationDuration="300" *ngIf="machine?.status === 'DISCONNECT'"></circle-progress> 
                         </div>
                         <ul class="metrics list-unstyle">
                             <li>
                                 <p>Availability</p>
-                                <span>80%</span>
+                                <span>{{machine?.availability}}%</span>
                             </li>
                             <li>
                                 <p>Performance</p>
-                                <span>80%</span>
+                                <span>{{machine?.performance}}%</span>
                             </li>
                             <li>
                                 <p>Quality</p>
-                                <span>80%</span>
+                                <span>{{machine?.quality}}%</span>
                             </li>
                         </ul>
                         <div class="parts_sec">
@@ -82,7 +82,7 @@
 
                 </div>
 
-                <div class="machine_item idle">
+                <!-- <div class="machine_item idle">
                     <div class="machine_header">
                         <div class="machine_title">
                             <span class="material-icons">
@@ -135,9 +135,9 @@
                         </div>
                     </div>
 
-                </div>
+                </div> -->
 
-                <div class="machine_item stop">
+                <!-- <div class="machine_item stop">
                     <div class="machine_header">
                         <div class="machine_title">
                             <span class="material-icons">
@@ -190,7 +190,7 @@
                         </div>
                     </div>
 
-                </div>
+                </div> -->
 
             </div>
         </div>
