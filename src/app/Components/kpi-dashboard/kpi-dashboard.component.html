@@ -22,8 +22,8 @@
                 </ul>
             </div>
 
-            <div class="machine_list" *ngFor ="let machine of machine_response">
-                <div class="machine_item active" >
+            <div class="machine_list" >
+                <div class="machine_item"  *ngFor ="let machine of machine_response"  [class.stop]="machine.status === 'STOP'" [class.active]="machine.status === 'OPERATE'" [class.idle]="machine.status === 'DISCONNECT'">
                     <div class="machine_header">
                         <div class="machine_title">
                             <span class="material-icons">
@@ -46,7 +46,7 @@
                             <!-- <circle-progress [percent]="retrieved" [radius]="50" [outerStrokeColor]="'#056B2D'"
                                 [innerStrokeColor]="'#eee'"></circle-progress> -->
 
-                                <circle-progress percent={{machine?.oee}} radius="65" outerStrokeColor="#1EAD55" innerStrokeColor="#21402D" animation="true" animationDuration="300" *ngIf="machine?.status === 'OPERATE'"></circle-progress> 
+    <circle-progress percent={{machine?.oee}} radius="65" outerStrokeColor="#1EAD55" innerStrokeColor="#21402D" animation="true" animationDuration="300" *ngIf="machine?.status === 'OPERATE'"></circle-progress> 
                <circle-progress percent={{machine?.oee}} radius="65" outerStrokeColor="#E8A24A" innerStrokeColor="#21402D" animation="true" animationDuration="300" *ngIf="machine?.status === 'STOP'"></circle-progress> 
                <circle-progress percent={{machine?.oee}} radius="65" outerStrokeColor="#6D6D6D" innerStrokeColor="#21402D" animation="true" animationDuration="300" *ngIf="machine?.status === 'DISCONNECT'"></circle-progress> 
                         </div>

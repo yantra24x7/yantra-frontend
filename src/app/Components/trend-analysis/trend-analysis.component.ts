@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./trend-analysis.component.scss']
 })
 export class TrendAnalysisComponent implements OnInit {
-
+  searchText:any;
   constructor() { }
 
   ngOnInit() {

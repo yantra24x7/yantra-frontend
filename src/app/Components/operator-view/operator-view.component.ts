@@ -8,6 +8,7 @@ import * as Highcharts from 'highcharts';
 })
 export class OperatorViewComponent implements OnInit {
   Highcharts: typeof Highcharts = Highcharts;
+  retrieved:any;
   constructor() { }
 
   ngOnInit() {

@@ -10,6 +10,7 @@ declare var Highcharts: any;
 })
 export class MachineViewComponent implements OnInit {
   Highcharts = Highcharts;
+  machie_status:any
   constructor() { }
 
   ngOnInit() {
