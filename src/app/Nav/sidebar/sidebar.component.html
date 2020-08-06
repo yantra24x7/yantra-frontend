@@ -6,35 +6,24 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <div class="company_name">
-        DEMO
-        <!--            <img src="../../../assets/images/logo_lmw.png">
-
- -->
-        <!-- <h3>LMW</h3> -->
+        YANTRA24X7
+     
       </div>
       <a class="logout" (click)="close()">
         <i class="material-icons">
           power_settings_new
         </i>
       </a>
-      <!-- <p class="edit"><i class="fa fa-edit"></i></p> -->
-      <!-- <button class="logout" mat-raised-button (click)="close()">Logout</button> -->
+     
     </div>
   </div>
-  <!-- <mat-icon (click)="openDialog()">edit</mat-icon> -->
 </mat-toolbar>
 
 <mat-sidenav-container>
   <mat-sidenav #drawer class="sidenav scroller" mode="side" opened *ngIf="nav.visible">
-    <!-- <div class="main-menu"> -->
     <mat-nav-list>
 
-      <!-- <ul id="side-main-menu" class="side-menu"> -->
-      <!-- <li routerLinkActive="active-link"> -->
-      <!-- <a [routerLink]="['/dashboard']">
-            <mat-icon></mat-icon>
-            <span>Dashboard</span>
-          </a> -->
+     
 
       <button mat-icon-button matTooltip="Home" matTooltipPosition="right" [routerLink]="['/kpi_dashboard']">
         <i class="material-icons">
