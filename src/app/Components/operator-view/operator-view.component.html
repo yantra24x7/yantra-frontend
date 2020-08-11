@@ -1,14 +1,14 @@
 <section class="page" id="page_area">
     <div class="section_top_padding">
-        <div class="operator_view_sec active">
+        <div class="operator_view_sec active" *ngFor ="let machine of machine_response">
             <div class="top_header">
                 <div class="operator_title">
-                    <h1>CNC-5(by UJFHGG20)</h1>
+                    <h1>{{machine?.actual}}</h1>
                     <P>JOB-0005</P>
                 </div>
                 <div class="operator_downtime">
                     <h6>Downtime</h6>
-                    <h4>00:00</h4>
+                    <h4>{{machine?.downtime}}</h4>
                 </div>
 
                 <div class="operator_status">
@@ -33,12 +33,12 @@
                     <div class="col-lg-8 col-md-12 col-xs-12 main_statistics">
                         <div class="content_box">
                             <div class="content_title">
-                                <h3>Shift: OEE Statistics</h3>
+                                <h3>Shift:</h3>
                             </div>
                             <div class="machine_metrics">
                                 <div class="progress_bar oee_progress_bar">
                                     <span>OEE</span>
-                                    <circle-progress [percent]="retrieved" [radius]="50" [outerStrokeColor]="'#056B2D'"
+                                    <circle-progress [percent]={{machine?.quality}} [radius]="50" [outerStrokeColor]="'#056B2D'"
                                         [innerStrokeColor]="'#eee'"></circle-progress>
                                 </div>
                                 <div class="metrics_list">
@@ -47,7 +47,7 @@
                                             <h3>Quality</h3>
                                         </div>
                                         <span>Q</span>
-                                        <circle-progress [percent]="retrieved" [radius]="50"
+                                        <circle-progress [percent]={{machine?.quality}} [radius]="50"
                                             [outerStrokeColor]="'#FF9D01'" [innerStrokeColor]="'#eee'">
                                         </circle-progress>
                                     </div>
@@ -56,7 +56,7 @@
                                             <h3>Performance</h3>
                                         </div>
                                         <span>P</span>
-                                        <circle-progress [percent]="retrieved" [radius]="50"
+                                        <circle-progress [percent]={{machine?.performance}} [radius]="50"
                                             [outerStrokeColor]="'#D61414'" [innerStrokeColor]="'#eee'">
                                         </circle-progress>
                                     </div>
@@ -65,7 +65,7 @@
                                             <h3>Availability</h3>
                                         </div>
                                         <span>A</span>
-                                        <circle-progress [percent]="35" [radius]="50"
+                                        <circle-progress [percent]={{machine?.availability}} [radius]="50"
                                             [outerStrokeColor]="'#18C0CD'" [innerStrokeColor]="'#eee'">
                                         </circle-progress>
                                     </div>

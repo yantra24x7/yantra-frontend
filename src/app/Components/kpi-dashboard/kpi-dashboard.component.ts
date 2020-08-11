@@ -11,6 +11,8 @@ export class KpiDashboardComponent implements OnInit {
   machine_response:any;
   parts:any;
   hour:any;
+  content:any;
+  higchart: any;
   constructor(private http:HttpClient) { }
 
   ngOnInit() {
@@ -19,17 +21,12 @@ export class KpiDashboardComponent implements OnInit {
     this.http.get('http://192.168.1.160:3000/users').subscribe(res =>{
       console.log(res);
       this.machine_response = res;
-      // this.hour = res.hour;
-      // this.parts = res.parts;
-
-      console.log(this.machine_response)
-    })
-    //Active
-    Highcharts.chart('container', {
+     console.log(res[0].content)
+     Highcharts.chart('container', {
       chart: {
         zoomType: 'xy',
         height: 120,
-        backgroundColor: '#45B734'
+        backgroundColor: '#FFFFFF'
       },
       exporting: {
         enabled: false
@@ -51,17 +48,17 @@ export class KpiDashboardComponent implements OnInit {
         }
       }],
       yAxis: [{ // Primary yAxis
-        gridLineColor: '#45B734',
+        // gridLineColor: '#45B734',
         labels: {
           enabled: false,
           style: {
-            color: Highcharts.getOptions().colors[1]
+            // color: Highcharts.getOptions().colors[1]
           }
         },
         title: {
           text: '',
           style: {
-            color: Highcharts.getOptions().colors[1]
+            // color: Highcharts.getOptions().colors[1]
           }
         }
       },
@@ -69,7 +66,7 @@ export class KpiDashboardComponent implements OnInit {
         title: {
           text: '',
           style: {
-            color: Highcharts.getOptions().colors[0]
+            // color: Highcharts.getOptions().colors[0]
           }
         },
 
@@ -80,31 +77,48 @@ export class KpiDashboardComponent implements OnInit {
       },
       series: [{
         showInLegend: false,
-        borderColor: '#056B2D',
-        name: 'Hour',
-        type: 'column',
-        yAxis: 1,
-        data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5],
-        color: "#056B2D",
+        borderColor: '#FFFFFF',
+        // name: 'Hour',
+        // type: 'column',
+        // yAxis: 1,
+        data: [res[0].content],
+        color: "#FFFFFF",
         tooltip: {
           valueSuffix: ' ',
         }
 
       }, {
         showInLegend: false,
-        name: 'Parts',
-        type: 'spline',
-        data: [7.0, 110.9, 20.5, 300.5, 18.2, 75.5, 25.2, 120.5],
-        color: "#16A500",
+        // name: 'Parts',
+        // type: 'spline',
+        data: [res[0].part],
+
+        color: " #FFFFFF",
         tooltip: {
           valueSuffix: ''
         }
       }]
     });
+      console.log(this.machine_response)
+    })
+    //Active
+
+    
+   
     
    
     
    
   }
+  ngAfterViewInit() {
+  
+   
+  
 
-}
+
+  
+  }
+
+};
+
+

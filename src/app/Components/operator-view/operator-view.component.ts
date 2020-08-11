@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-operator-view',
@@ -9,9 +10,17 @@ import * as Highcharts from 'highcharts';
 export class OperatorViewComponent implements OnInit {
   Highcharts: typeof Highcharts = Highcharts;
   retrieved:any;
-  constructor() { }
+  machine_response:any;
+  constructor(private http:HttpClient) { }
 
   ngOnInit() {
+
+
+    this.http.get('http://192.168.1.160:3000/rounds').subscribe(res =>{
+        console.log(res);
+        this.machine_response = res;
+
+  });
     //Active
     // container1 the chart
     Highcharts.chart('container1', {

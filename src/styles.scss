@@ -1105,3 +1105,14 @@ table.table td .highlit {
         max-width: 1600px;
     }
   }
+
+
+     // Custom styles
+     .page{
+        &.kpi {
+            padding: 0;
+            .section_top_padding {
+                padding: 10px 0;
+            }
+        }
+    }
