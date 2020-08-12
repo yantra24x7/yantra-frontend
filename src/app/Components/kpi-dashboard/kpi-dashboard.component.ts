@@ -21,12 +21,11 @@ export class KpiDashboardComponent implements OnInit {
     this.http.get('http://192.168.1.160:3000/users').subscribe(res =>{
       console.log(res);
       this.machine_response = res;
-     console.log(res[0].content)
-     Highcharts.chart('container', {
+    Highcharts.chart('container', {
       chart: {
         zoomType: 'xy',
         height: 120,
-        backgroundColor: '#FFFFFF'
+        backgroundColor: '#45B734'
       },
       exporting: {
         enabled: false
@@ -48,17 +47,17 @@ export class KpiDashboardComponent implements OnInit {
         }
       }],
       yAxis: [{ // Primary yAxis
-        // gridLineColor: '#45B734',
+        gridLineColor: '#45B734',
         labels: {
           enabled: false,
           style: {
-            // color: Highcharts.getOptions().colors[1]
+            color: Highcharts.getOptions().colors[1]
           }
         },
         title: {
           text: '',
           style: {
-            // color: Highcharts.getOptions().colors[1]
+            color: Highcharts.getOptions().colors[1]
           }
         }
       },
@@ -66,7 +65,7 @@ export class KpiDashboardComponent implements OnInit {
         title: {
           text: '',
           style: {
-            // color: Highcharts.getOptions().colors[0]
+            color: Highcharts.getOptions().colors[0]
           }
         },
 
@@ -77,42 +76,120 @@ export class KpiDashboardComponent implements OnInit {
       },
       series: [{
         showInLegend: false,
-        borderColor: '#FFFFFF',
-        // name: 'Hour',
-        // type: 'column',
-        // yAxis: 1,
-        data: [res[0].content],
-        color: "#FFFFFF",
+        borderColor: '#056B2D',
+        name: 'Hour',
+        type: 'column',
+        yAxis: 1,
+        //data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5],
+        data: res[0].content,
+        color: "#056B2D",
         tooltip: {
           valueSuffix: ' ',
         }
 
       }, {
         showInLegend: false,
-        // name: 'Parts',
-        // type: 'spline',
-        data: [res[0].part],
-
-        color: " #FFFFFF",
+        name: 'Parts',
+        type: 'spline',
+        //data: [7.0, 110.9, 20.5, 300.5, 18.2, 75.5, 25.2, 120.5],
+        data: res[0].part,
+        color: "#16A500",
         tooltip: {
           valueSuffix: ''
         }
       }]
     });
-      console.log(this.machine_response)
-    })
+
+
+    Highcharts.chart('container3', {
+      chart: {
+        zoomType: 'xy',
+        height: 120,
+        backgroundColor: '#F81301'
+      },
+      exporting: {
+        enabled: false
+      },
+      credits: {
+        enabled: false
+      },
+      title: {
+        text: ''
+      },
+      subtitle: {
+        text: ''
+      },
+      xAxis: [{
+        categories: [],
+        crosshair: false,
+        labels: {
+          enabled: false
+        }
+      }],
+      yAxis: [{ // Primary yAxis
+        gridLineColor: '#45B734',
+        labels: {
+          enabled: false,
+          style: {
+            color: Highcharts.getOptions().colors[1]
+          }
+        },
+        title: {
+          text: '',
+          style: {
+            color: Highcharts.getOptions().colors[1]
+          }
+        }
+      },
+      { // Secondary yAxis
+        title: {
+          text: '',
+          style: {
+            color: Highcharts.getOptions().colors[0]
+          }
+        },
+
+        opposite: false
+      }],
+      tooltip: {
+        shared: true
+      },
+      series: [{
+        showInLegend: false,
+        borderColor: '#F81301',
+        name: 'Hour',
+        type: 'column',
+        yAxis: 1,
+        data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5],
+       // data: res[0].content,
+        color: "#F81301",
+        tooltip: {
+          valueSuffix: ' ',
+        }
+
+      }, {
+        showInLegend: false,
+        name: 'Parts',
+        type: 'spline',
+        data: [7.0, 110.9, 20.5, 300.5, 18.2, 75.5, 25.2, 120.5],
+        //data: res[0].part,
+        color: "#F81301",
+        tooltip: {
+          valueSuffix: ''
+        }
+      }]
+    });
+
+
+
+
+
+      
+    });
     //Active
 
-    
-   
-    
-   
-    
-   
-  }
-  ngAfterViewInit() {
-  
-   
+}
+  ngAfterViewInit() { 
   
 
 
@@ -120,5 +197,3 @@ export class KpiDashboardComponent implements OnInit {
   }
 
 };
-
-
