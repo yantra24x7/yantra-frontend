@@ -47,35 +47,8 @@ width:20px; }
    }
 }
 
-.view_graph{
-  border-radius: 5px;
-  border: 1px solid #3E3F43;
-  margin-bottom: 15px;
-  padding: 15px;
-  padding-bottom: 0;
-}
 
-::ng-deep.view_graph{
-  .highcharts-yaxis {
-    text {
-      fill: #fff!important;
-    }
-  }
-}
-::ng-deep.view_graph{
-  .highcharts-yaxis-labels{
-  text {
-    fill: #fff !important;
-  }
-}
-}
 
-::ng-deep.view_graph{
-  .highcharts-xaxis-labels{
-  text {
-    font-size: 11px;
-    fill: #fff!important;
-    text-decoration: underline;
-  }
-}
-}
+
+
+

@@ -31,7 +31,7 @@
 
             <div class="machine_list" >
                 
-                <div class="machine_item"  *ngFor ="let machine of machine_response"  [class.stop]="machine.status === 'STOP'" [class.active]="machine.status === 'OPERATE'" [class.idle]="machine.status === 'DISCONNECT'">
+                <div class="machine_item"  *ngFor ="let machine of machine_response;let i = index"  [class.stop]="machine.status === 'STOP'" [class.active]="machine.status === 'OPERATE'" [class.idle]="machine.status === 'DISCONNECT'">
                     <div class="machine_header">
                         <div class="machine_title">
                             <span class="material-icons">
@@ -46,7 +46,7 @@
                             <i class="material-icons">
                                 fiber_manual_record
                             </i>
-                            <span>2hrs | 16min</span>
+                            <!-- <span>2hrs | 16min</span> -->
                         </p>
                     </div>
                     <div class="machine_body">
@@ -77,12 +77,17 @@
                             <p>Parts</p>
                         </div>
                         <div class="machine_values">
-                            <p>Actual / Plan : <span>120 / 100</span></p>
+                            <p>Actual / Plan : <span>{{machine?.actual}} /{{machine?.plan}}</span></p>
                         </div>
                         
                         <div >
                             <p>Parts per hour</p>
-                           
+      
+<div id="partcycle{{i}}">
+
+</div>
+
+
 
                         </div>
                      
@@ -204,16 +209,27 @@
         </div>
     </div>
 
-    <div >
+    <!-- <div >
         <figure >
             <div id="container3"></div>
             
         </figure>
-    </div>
-    <div >
+    </div> -->
+    <!-- <div >
         <figure >
             <div id="container"></div>
             
         </figure>
-    </div>
+    </div> -->
+
+    <div >
+                                
+        <!-- <div id="partcycle0"></div> -->
+        
+   
+</div>
+<div *ngIf="myLoader" class="spinner">
+    <img src="assets/images/spinner.gif">
+  </div>
+<!-- <button (click)="renderchart()">Chart Display</button> -->
 </section>
