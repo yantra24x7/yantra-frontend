@@ -29,7 +29,7 @@
     "file-saver": "^2.0.2",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
-    "highcharts": "^8.0.0",
+    "highcharts": "^8.1.1",
     "highcharts-angular": "^2.4.0",
     "highcharts-more": "^0.1.7",
     "jquery": "^3.4.1",
