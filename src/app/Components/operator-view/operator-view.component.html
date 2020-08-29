@@ -1,25 +1,25 @@
-<!-- <section class="page" id="page_area">
+<section class="page" id="page_area">
     <div class="section_top_padding">
         <div class="operator_view_sec active" *ngFor ="let machine of machine_response">
-            <div class="top_header">
+            <!-- <div class="top_header">
                 <div class="operator_title">
                     <h1>{{machine?.actual}}</h1>
                     <P>JOB-0005</P>
-                </div>
-                <div class="operator_downtime">
+                </div> -->
+                <!-- <div class="operator_downtime">
                     <h6>Downtime</h6>
                     <h4>{{machine?.downtime}}</h4>
-                </div>
-
+                </div> -->
+<!-- 
                 <div class="operator_status">
                     <p>Active for <span>16 mintues</span>
                     </p>
                     <i class="material-icons">
                         fiber_manual_record
                     </i>
-                </div>
-            </div>
-            <div class="content_body">
+                </div> -->
+            <!-- </div> -->
+            <!-- <div class="content_body">
                 <div class="action_sec">
                     <button class="btn btn-block reason_btn">
                         Reason
@@ -34,45 +34,45 @@
                         <div class="content_box">
                             <div class="content_title">
                                 <h3>Shift:</h3>
-                            </div>
-                            <div class="machine_metrics">
-                                <div class="progress_bar oee_progress_bar">
+                            </div> -->
+                            <!-- <div class="machine_metrics"> -->
+                                <!-- <div class="progress_bar oee_progress_bar">
                                     <span>OEE</span>
                                     <circle-progress [percent]={{machine?.quality}} [radius]="50" [outerStrokeColor]="'#056B2D'"
                                         [innerStrokeColor]="'#eee'"></circle-progress>
-                                </div>
-                                <div class="metrics_list">
+                                </div> -->
+                                <!-- <div class="metrics_list">
                                     <div class="progress_bar quality">
                                         <div class="content_title">
                                             <h3>Quality</h3>
                                         </div>
-                                        <span>Q</span>
-                                        <circle-progress [percent]={{machine?.quality}} [radius]="50"
+                                        <span>Q</span> -->
+                                        <!-- <circle-progress [percent]={{machine?.quality}} [radius]="50"
                                             [outerStrokeColor]="'#FF9D01'" [innerStrokeColor]="'#eee'">
-                                        </circle-progress>
-                                    </div>
-                                    <div class="progress_bar performance">
+                                        </circle-progress> -->
+                                    <!-- </div> -->
+                                    <!-- <div class="progress_bar performance">
                                         <div class="content_title">
                                             <h3>Performance</h3>
                                         </div>
-                                        <span>P</span>
-                                        <circle-progress [percent]={{machine?.performance}} [radius]="50"
+                                        <span>P</span> -->
+                                        <!-- <circle-progress [percent]={{machine?.performance}} [radius]="50"
                                             [outerStrokeColor]="'#D61414'" [innerStrokeColor]="'#eee'">
-                                        </circle-progress>
-                                    </div>
-                                    <div class="progress_bar availability">
+                                        </circle-progress> -->
+                                    <!-- </div> -->
+                                    <!-- <div class="progress_bar availability">
                                         <div class="content_title">
                                             <h3>Availability</h3>
                                         </div>
-                                        <span>A</span>
-                                        <circle-progress [percent]={{machine?.availability}} [radius]="50"
+                                        <span>A</span> -->
+                                        <!-- <circle-progress [percent]={{machine?.availability}} [radius]="50"
                                             [outerStrokeColor]="'#18C0CD'" [innerStrokeColor]="'#eee'">
-                                        </circle-progress>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hour_based_metics">
+                                        </circle-progress> -->
+                                    <!-- </div> -->
+                                <!-- </div> -->
+                            <!-- </div>
+                        </div> -->
+                        <!-- <div class="hour_based_metics">
                             <div class="content_box">
                                 <div class="content_title">
                                     <h3>Utilization Per Hour</h3>
@@ -101,9 +101,9 @@
                                     <span>Parts Cycle</span>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-xs-12 parts_statistics">
+                        </div> -->
+                    <!-- </div> -->
+                    <!-- <div class="col-lg-4 col-md-6 col-xs-12 parts_statistics">
                         <div class="content_box">
                             <div class="content_title">
                                 <h3>Parts Statistics</h3>
@@ -139,11 +139,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div> -->
+                <!-- </div> -->
             </div>
 
-            <div class="bottom_footer">
+            <!-- <div class="bottom_footer">
                 <div class="back_btn">
                     <i class="material-icons"  matTooltip="Back">
                         reply
@@ -154,10 +154,10 @@
                         zoom_out_map
                     </i>
                 </div>
-            </div>
+            </div> -->
         </div>
 
-        <div class="operator_view_sec idle">
+        <!-- <div class="operator_view_sec idle">
             <div class="top_header">
                 <div class="operator_title">
                     <h1>CNC-5(by UJFHGG20)</h1>
@@ -294,21 +294,21 @@
                     </i>
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="operator_view_sec stop">
+        <div class="operator_view_sec stop" *ngFor="let machine of machine_response">
             <div class="top_header">
                 <div class="operator_title">
-                    <h1>CNC-5(by UJFHGG20)</h1>
-                    <P>JOB-0005</P>
+                    <h1>{{machine?.machine_name}}</h1>
+                    <!-- <P>JOB-0005</P> -->
                 </div>
                 <div class="operator_downtime">
                     <h6>Downtime</h6>
-                    <h4>00:00</h4>
+                    <h4>{{machine?.downtime}}</h4>
                 </div>
 
                 <div class="operator_status">
-                    <p>Active for <span>16 mintues</span>
+                    <p>Active for <span>{{machine?.active}} mintues</span>
                     </p>
                     <i class="material-icons">
                         fiber_manual_record
@@ -329,22 +329,22 @@
                     <div class="col-lg-8 col-md-12 col-xs-12 main_statistics">
                         <div class="content_box">
                             <div class="content_title">
-                                <h3>Shift: OEE Statistics</h3>
+                                <h3>Shift:{{machine?.shift}} </h3>
                             </div>
                             <div class="machine_metrics">
                                 <div class="progress_bar oee_progress_bar">
                                     <span>OEE</span>
-                                    <circle-progress [percent]="68" [radius]="50" [outerStrokeColor]="'#056B2D'"
+                                    <circle-progress percent="{{machine?.oee}}" [radius]="50" [outerStrokeColor]="'#056B2D'"
                                         [innerStrokeColor]="'#eee'"></circle-progress>
                                 </div>
                                 <div class="metrics_list">
-                                    <div class="progress_bar quality">
+                                    <div class="progress_bar availability">
                                         <div class="content_title">
-                                            <h3>Quality</h3>
+                                            <h3>Availability</h3>
                                         </div>
-                                        <span>Q</span>
-                                        <circle-progress [percent]="18" [radius]="50"
-                                            [outerStrokeColor]="'#FF9D01'" [innerStrokeColor]="'#eee'">
+                                        <span>A</span>
+                                        <circle-progress percent="{{machine?.availability}}" [radius]="50"
+                                            [outerStrokeColor]="'#18C0CD'" [innerStrokeColor]="'#eee'">
                                         </circle-progress>
                                     </div>
                                     <div class="progress_bar performance">
@@ -352,19 +352,21 @@
                                             <h3>Performance</h3>
                                         </div>
                                         <span>P</span>
-                                        <circle-progress [percent]="37" [radius]="50"
+                                        <circle-progress percent="{{machine?.performance}}" [radius]="50"
                                             [outerStrokeColor]="'#D61414'" [innerStrokeColor]="'#eee'">
                                         </circle-progress>
                                     </div>
-                                    <div class="progress_bar availability">
+
+                                    <div class="progress_bar quality">
                                         <div class="content_title">
-                                            <h3>Availability</h3>
+                                            <h3>Quality</h3>
                                         </div>
-                                        <span>A</span>
-                                        <circle-progress [percent]="76" [radius]="50"
-                                            [outerStrokeColor]="'#18C0CD'" [innerStrokeColor]="'#eee'">
+                                        <span>Q</span>
+                                        <circle-progress percent="{{machine?.quality}}" [radius]="50"
+                                            [outerStrokeColor]="'#FF9D01'" [innerStrokeColor]="'#eee'">
                                         </circle-progress>
                                     </div>
+                                  
                                 </div>
                             </div>
                         </div>
@@ -375,11 +377,11 @@
                                 </div>
                                 <div class="graph">
                                     <figure class="highcharts-figure">
-                                        <div id="container3"></div>
+                                        <div id="container1"></div>
                                     </figure>
                                 </div>
                                 <div class="main_value">
-                                    <p>94%</p>
+                                    <p>{{machine?.cycle}}%</p>
                                     <span>In Cycle</span>
                                 </div>
                             </div>
@@ -389,11 +391,11 @@
                                 </div>
                                 <div class="graph">
                                     <figure class="highcharts-figure">
-                                        <div id="container4"></div>
+                                        <div id="container2"></div>
                                     </figure>
                                 </div>
                                 <div class="main_value">
-                                    <p>92%</p>
+                                    <p>{{machine?.parts_cycle}}%</p>
                                     <span>Parts Cycle</span>
                                 </div>
                             </div>
@@ -406,7 +408,7 @@
                             </div>
                             <div class="progress_bar">
                                 <p>off <span> 250</span> Required </p>
-                                <circle-progress [percent]="41" [radius]="50" [outerStrokeColor]="'#626262'"
+                                <circle-progress percent="{{machine?.part_stattistics}}" [radius]="50" [outerStrokeColor]="'#626262'"
                                     [innerStrokeColor]="'#eee'"></circle-progress>
                             </div>
 
@@ -414,24 +416,24 @@
                                 <ul class="parts_series">
                                     <li>
                                         <p>Rejects</p>
-                                        <h4>0</h4>
+                                        <h4>{{machine?.rejects}}</h4>
                                     </li>
                                     <li>
                                         <p>Parts Remaining</p>
-                                        <h4>0</h4>
+                                        <h4>{{machine?.remaining}}</h4>
                                     </li>
                                 </ul>
                             </div>
 
                             <div class="operator_cycle">
                                 <div class="expected_cycle">
-                                    <h4>01:20</h4>
+                                    <h4>{{machine?.expexted_cycle}}</h4>
                                     <span>Expected Cycle</span>
                                 </div>
 
                                 <div class="cycle_list">
-                                    <p><span>2:19</span> Last Cylce</p>
-                                    <p><span>2:19</span>Average</p>
+                                    <p><span>{{machine?.last_cycle}}</span> Last Cylce</p>
+                                    <p><span>{{machine?.average}}</span>Average</p>
                                 </div>
                             </div>
                         </div>
@@ -452,5 +454,11 @@
                 </div>
             </div>
         </div>
-    </div>
-</section> -->
+
+        <div class="graph">
+            <figure class="highcharts-figure">
+                <div id="container1"></div>
+            </figure>
+        </div>
+    <!-- </div> -->
+</section>
