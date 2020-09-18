@@ -25,24 +25,24 @@ export class KpiDashboardComponent implements OnInit {
 
   this.myLoader = true;
 
-    this.http.get('http://192.168.1.160:3000/users').subscribe(res =>{
+    this.http.get('http://52.66.140.40:3000/users').subscribe(res =>{
       this.machine_response = res;
       this.allcycletime =res;
       this.myLoader = false;
 
       console.log(this.allcycletime)
   })
-  this.myLoader = true;
 
   setTimeout (() => {
     this.renderchart();
  }, 1000);
- this.myLoader = false;
 
   
 }
 
 renderchart(){
+  this.myLoader = true;
+
   for(let i=0; i<this.allcycletime.length; i++){
     console.log(this.allcycletime[i].content)
     console.log(this.allcycletime[i].part)
@@ -50,6 +50,8 @@ renderchart(){
     this.data1 =  this.allcycletime[i].part
     this.reflect = this.allcycletime[i].status;
     console.log(this.reflect)
+    this.myLoader = false;
+
 
     // '#45B734''#45B734'
 
