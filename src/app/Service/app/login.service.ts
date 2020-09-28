@@ -16,4 +16,9 @@ export class LoginService {
   // forgot(params):Observable<any> {
   //   return this.http.get('sessions/forgot_pwd='+params)
   // }
+
+  anjeneya():Observable<any> {
+    return this.http.get('kpy_dashboard');
+}
+
 }

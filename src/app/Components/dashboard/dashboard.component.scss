@@ -40,19 +40,6 @@
       display: block;
     }
   }
-
-  // ::after {
-  //   content: "";
-  //   width: 0px;
-  //   height: 0;
-  //   border-bottom: 30px solid #2e2e2e;
-  //   border-left: 30px solid transparent;
-  //   z-index: 99;
-
-  //   position: absolute;
-  //   bottom: 0;
-  //   right: 0;
-  // }
 }
 
 .no-data {
@@ -63,29 +50,29 @@
   }
 }
 
-.idle {
-  background-color: #3e3e3e;
+// .idle {
+//   background-color: #3e3e3e;
 
-  label {
-    background-color: #3e3e3e;
-  }
-}
+//   label {
+//     background-color: #3e3e3e;
+//   }
+// }
 
-.stopped {
-  background-color: #3e3e3e;
+// .stopped {
+//   background-color: #3e3e3e;
 
-  label {
-    background-color: #3e3e3e;
-  }
-}
+//   label {
+//     background-color: #3e3e3e;
+//   }
+// }
 
-.running {
-  background-color: #3e3e3e;
+// .running {
+//   background-color: #3e3e3e;
 
-  label {
-    background-color: #3e3e3e;
-  }
-}
+//   label {
+//     background-color: #3e3e3e;
+//   }
+// }
 
 .scroll {
   height: calc(104vh - 135px);
@@ -174,26 +161,23 @@ ul.pie_charts_utilizations {
   .progress{
     border-radius: 10px;
     height: 5px;
-    width: 60%;
+    width: 100%;
     margin: 4px 0;
-    background-color: #212127;
+    background-color: #c5c5c5;
+    // background-color: #212127;
 
   .progress-bar{
     &.running{
-     width: 35%;
     background-color: #1ead55;
     }
      &.stopped{
-     width: 55%;
     background-color:  #3e3e3e;
     }
      &.no-data{
-     width: 66.1%;
     background-color: #7d7d7d;
     }
      &.idle{
-     width: 45%;
-    background-color:  #3e3e3e;
+    background-color:  #E6A348;
     }
   }
 }
@@ -428,12 +412,12 @@ right: -64px;
             color: #e8a249;
           }
         }
-      }
+      } 
       .idleb{
-         color:#e8a249;
+         color:#E8A24A;
       }
       .skill-2 stop{
-        background-color: #3e3e3e;
+        background-color:#E8A24A;
       }
       .stopped{
         border-top: 7px solid #ed5550;
@@ -600,22 +584,28 @@ progress, progress[role] {
   height: 6px;
   width: 100%;
 }
-.skill-2.running::-webkit-progress-value{
+.progress-bar.running::-webkit-progress-value{
   background-color: #1EAD55;
 }
-.skill-2.stop::-webkit-progress-value {
+.progress-bar.stop::-webkit-progress-value {
   background-color: #ED5550;
 }
-.skill-2.no-data::-webkit-progress-value{
+.progress-bar.idle::-webkit-progress-value{
+  background-color: #E6A444;
+}
+.progress-bar.no-data::-webkit-progress-value{
   background-color: #6D6D6D;
 }
-.skill-2.running::-moz-progress-bar {
+.progress-bar.running::-moz-progress-bar {
   background-color: #1EAD55;
 }
-.skill-2.stop::-moz-progress-bar  {
+.progress-bar.stop::-moz-progress-bar  {
   background-color: #ED5550;
 }
-.skill-2.no-data::-moz-progress-bar {
+.progress-bar.idle::-moz-progress-bar  {
+  background-color: #E6A444;
+}
+.progress-bar.no-data::-moz-progress-bar {
   background-color: #6D6D6D;
 }
 // Animation Keyframes
