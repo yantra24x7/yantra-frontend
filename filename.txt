@@ -527,7 +527,7 @@
 [31m-  { path: 'trendchart', loadChildren: () => import('./Components/trendchart/trendchart.module').then(m => m.TrendchartModule) },[m
 [31m-   { path: 'comparechart', loadChildren: () => import('./Components/comparechart/comparechart.module').then(m => m.ComparechartModule) },[m
 [31m-   { path: 'overallchart', loadChildren: () => import('./Components/overallchart/overallchart.module').then(m => m.OverallchartModule) },[m
-[31m-  { path: 'machine_lmw', loadChildren: () => import('./Components/machine-lmw/machine-lmw.module').then(m => m.MachineLmwModule) },[m
+[31m-  { path: 'Tablet', loadChildren: () => import('./Components/machine-lmw/machine-lmw.module').then(m => m.MachineLmwModule) },[m
 [31m-  { path: 'reason_lmw', loadChildren: () => import('./Components/reason-lmw/reason-lmw.module').then(m => m.ReasonLmwModule) },[m
 [31m-  { path: 'oee_dashboard', loadChildren: () => import('./Components/oee-dashboard/oee-dashboard.module').then(m => m.OeeDashboardModule) },[m
 [31m-  { path: 'reflect', loadChildren: () => import('./Components/reflect/reflect.module').then(m => m.ReflectModule) },[m

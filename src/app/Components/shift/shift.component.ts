@@ -100,6 +100,7 @@ export class Add {
 
   constructor(public dialogRef: MatDialogRef<Add>, @Inject(MAT_DIALOG_DATA) public data: Add, private fb: FormBuilder, private shift: ShiftService, private toast: ToastrService) {
     this.value = data;
+    console.log(this.value)
   }
 
   onNoClick(): void {

@@ -10,9 +10,12 @@ export class ProductionService {
   constructor(private http:HttpClient) { }
 
   namakkal(machine):Observable<any>{
-  console.log(machine)
   return this.http.get('live_production_part?machine=' + machine)
   }
+
+  syncing(machine):Observable<any>{
+    return this.http.get('sync_production_parts?machine_name=' + machine)
+    }
   getmachines():Observable<any>{
     return this.http.get('tab_machine_list')
  }

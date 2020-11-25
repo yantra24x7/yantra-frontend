@@ -24,8 +24,8 @@ export class KpiDashboardComponent implements OnInit {
   ngOnInit() {
 
   this.myLoader = true;
-
-    this.http.get('http://52.66.140.40:3000/users').subscribe(res =>{
+  // http://52.66.140.40:3000/users
+    this.http.get('http://15.207.212.223:3000/api/v1/kpy_dashboard').subscribe(res =>{
       this.machine_response = res;
       this.allcycletime =res;
       this.myLoader = false;

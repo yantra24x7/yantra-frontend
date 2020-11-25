@@ -17,7 +17,7 @@
 </div> -->
 <h2 mat-dialog-title>New Reason Registaration</h2>
 <mat-dialog-content class="mat-typography">
-    <form [formGroup]="reasonform" (ngSubmit)="submit(reasonform)" class="form_sec">
+    <form [formGroup]="reasonform"  class="form_sec">
         <mat-form-field>
             <mat-label>Reason</mat-label>
             <input matInput formControlName="reason" type="text" placeholder="Enter your reason">
@@ -26,5 +26,5 @@
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>
-  <button color="primary" mat-raised-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+  <button color="primary" mat-raised-button [mat-dialog-close]="true" (click)="submit(reasonform)" [disabled]="reasonform.invalid" cdkFocusInitial>Save</button>
 </mat-dialog-actions>

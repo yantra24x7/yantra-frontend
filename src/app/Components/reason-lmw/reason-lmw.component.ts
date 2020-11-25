@@ -5,6 +5,7 @@ import { NavbarService } from '../../Nav/navbar.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2';
+import { untilDestroyed } from 'ngx-take-until-destroy';
 
 @Component({
   selector: 'app-reason-lmw',
@@ -58,23 +59,25 @@ export class ReasonLmwComponent implements OnInit {
   }
 
 
- delete_view(id){
-   console.log(id);
+
+  delete_view(id) {
     Swal.fire({
       title: 'Are you sure want to delete?',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: 'Yes, delete it!',
-      cancelButtonText: 'No, keep it',
+      cancelButtonText: 'No, keep it'
     }).then((result) => {
       if (result.value) {
-        this.service.delete_reason(id).subscribe(res => {
+        this.service.delete_reason(id).pipe(untilDestroyed(this)).subscribe(res => {
+          console.log(res);
+          if(res === 'Reason Deleted')
+          alert("cfgvhbj")
           this.toast.success('Deleted Successfully');
           this.ngOnInit();
         }, );
       }
     });
-
   }
   ngOnInit() {
     this.myLoader = true;
@@ -87,6 +90,11 @@ export class ReasonLmwComponent implements OnInit {
 
     })
   }
+
+  ngOnDestroy() { }
+
+
+
 
 }
 @Component({

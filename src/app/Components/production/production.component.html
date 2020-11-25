@@ -1,4 +1,3 @@
-
 <div class="page">
     <div class="page_title_sec">
                 
@@ -11,7 +10,7 @@
         <form [formGroup]="login" (ngSubmit)="logintest('true')">
 
             <div class="rhs_wrapper">
-              <button [routerLink]="['/machine_lmw']"class="back" mat-flat-button color="primary"><span class="material-icons">
+              <button [routerLink]="['/Tablet']"class="back" mat-flat-button color="primary"><span class="material-icons">
                                         <mat-icon>keyboard_arrow_left</mat-icon>
 
                     </span></button> 
@@ -20,7 +19,6 @@
                      <mat-form-field appearance="outline">
                         <mat-select placeholder="Select Machine" matNativeControl required formControlName="machine">
                             <mat-option value="all">All</mat-option>
-
                             <mat-option *ngFor="let machine of machine_response" [value]="machine.machine_name">
                             {{machine.machine_name}}
                           </mat-option>
@@ -29,6 +27,9 @@
              </div>   --> 
 
              <h2>{{marvel}}</h2>
+
+             <!-- <button  (click)=synclox()><h3>Reload</h3></button> -->
+
             </div>
             <div class="lhs_wrapper">
                <mat-form-field appearance="fill" floatLabel="never">
@@ -90,7 +91,9 @@
                 
                     </tbody>
                 </table>
-            
+             <div *ngIf="last.length==0" class="no_data_found">
+            <h2>No data found</h2>
+          </div>
            
              
             </div>
@@ -136,7 +139,9 @@
                     </tbody>
                 </table>
             
-           
+                <div *ngIf="get_report.length==0" class="no_data_found">
+                    <h2>No data found</h2>
+                  </div>
              
             </div>
         </div>

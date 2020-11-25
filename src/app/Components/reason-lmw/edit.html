@@ -1,6 +1,6 @@
 <h2 mat-dialog-title>Edit Reason</h2>
 <mat-dialog-content class="mat-typography">
-    <form [formGroup]="reasonforum" (ngSubmit)="submit()" class="form_sec">
+    <form [formGroup]="reasonforum"  class="form_sec">
         <div class="row_sec">
             <mat-form-field>
                 <mat-label>Reason</mat-label>
@@ -11,5 +11,5 @@
 </mat-dialog-content>
 <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close class="filter_btn btn_default ml-16">Close</button>
-    <button mat-raised-button color="primary" class="filter_btn btn_orange"> Save</button>
+    <button mat-raised-button color="primary" (click)="submit()" class="filter_btn btn_orange"> Save</button>
 </mat-dialog-actions>

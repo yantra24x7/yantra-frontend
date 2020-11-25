@@ -43,7 +43,7 @@ export class ProductionComponent implements OnInit {
     })
     
   }
-
+ 
   // openDialog(): void {
   //   const dialogRef = this.dialog.open(DialogOverviewDialog, {
   //     // width: '250px',
@@ -85,6 +85,18 @@ export class ProductionComponent implements OnInit {
     
   }
  
+
+  synclox(){
+    this.marvel = localStorage.getItem('machine_name');
+    console.log(this.marvel);
+    this.service.syncing(this.marvel).subscribe(res =>{ 
+      console.log(res);
+      Swal.fire(res['message'])
+      location.reload()
+       this.last = res;
+      })
+
+  }
   logintest(s) {
     this.status = s;
     this.myLoader = true;

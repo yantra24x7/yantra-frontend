@@ -47,7 +47,7 @@ import { NgModule } from '@angular/core';
          path: 'overallchart', loadChildren: () => import('./Components/overallchart/overallchart.module').then(m => m.OverallchartModule) 
         },
       {
-         path: 'machine_lmw', loadChildren: () => import('./Components/machine-lmw/machine-lmw.module').then(m => m.MachineLmwModule) 
+         path: 'Tablet', loadChildren: () => import('./Components/machine-lmw/machine-lmw.module').then(m => m.MachineLmwModule) 
         },
       {
          path: 'reason_lmw', loadChildren: () => import('./Components/reason-lmw/reason-lmw.module').then(m => m.ReasonLmwModule) 
